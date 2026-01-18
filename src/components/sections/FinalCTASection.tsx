@@ -50,14 +50,22 @@ export const FinalCTASection = () => {
             </p>
           </div>
 
-          {/* Footer */}
-          <div className="mt-16 pt-8 border-t border-border">
+        </div>
+      </div>
+
+      {/* Dark Footer */}
+      <div className="mt-16 bg-warm-brown py-12">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Heart className="w-5 h-5 text-primary" />
-              <span className="font-serif text-lg">100 Dias Sem Caos</span>
+              <Heart className="w-5 h-5 text-rose-light" />
+              <span className="font-serif text-lg text-cream">100 Dias Sem Caos</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-cream/80 mb-6">
               © 2024 Luiza Pinheiro. Todos os direitos reservados.
+            </p>
+            <p className="text-xs text-cream/60 max-w-2xl mx-auto leading-relaxed">
+              <strong className="text-cream/80">Aviso Legal:</strong> "Nenhuma informação contida neste produto deve ser interpretada como uma afirmação da obtenção de resultados. Qualquer referência ao desempenho passado ou potencial de uma estratégia abordada no conteúdo não é, e não deve ser interpretada como uma recomendação ou como garantia de qualquer resultado específico."
             </p>
           </div>
         </div>
