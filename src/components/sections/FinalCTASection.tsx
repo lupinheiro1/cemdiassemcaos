@@ -3,7 +3,7 @@ import { Clock, Heart, Sparkles } from "lucide-react";
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-rose-light">
+    <section className="pt-16 md:pt-24 bg-gradient-to-b from-background to-rose-light">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Limited time offer */}
@@ -61,10 +61,16 @@ export const FinalCTASection = () => {
               <Heart className="w-5 h-5 text-rose-light" />
               <span className="font-serif text-lg text-cream">100 Dias Sem Caos</span>
             </div>
-            <p className="text-sm text-cream/80 mb-6">
-              © 2024 Luiza Pinheiro. Todos os direitos reservados.
+            <p className="text-sm text-cream/80 mb-2">
+              © 2026 Luiza Pinheiro. Todos os direitos reservados.
             </p>
-            <p className="text-xs text-cream/60 max-w-2xl mx-auto leading-relaxed">
+            <a 
+              href="#" 
+              className="text-sm text-cream/70 hover:text-cream underline underline-offset-2 mb-6 inline-block"
+            >
+              Política de Privacidade
+            </a>
+            <p className="text-xs text-cream/60 max-w-2xl mx-auto leading-relaxed mt-4">
               <strong className="text-cream/80">Aviso Legal:</strong> "Nenhuma informação contida neste produto deve ser interpretada como uma afirmação da obtenção de resultados. Qualquer referência ao desempenho passado ou potencial de uma estratégia abordada no conteúdo não é, e não deve ser interpretada como uma recomendação ou como garantia de qualquer resultado específico."
             </p>
           </div>
