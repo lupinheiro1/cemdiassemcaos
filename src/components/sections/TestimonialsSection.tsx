@@ -23,21 +23,31 @@ export const TestimonialsSection = () => {
           <p className="text-center text-muted-foreground mb-12">
             Histórias reais de mães que transformaram sua maternidade
           </p>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.alt}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            ))}
-          </div>
+      {/* Horizontal scrolling container */}
+      <div className="overflow-x-auto pb-4">
+        <div className="flex gap-4 px-4 md:px-8 w-max">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.alt}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="flex justify-center mt-4">
+        <div className="w-24 h-1 bg-muted rounded-full overflow-hidden">
+          <div className="w-1/3 h-full bg-primary/50 rounded-full" />
         </div>
       </div>
     </section>
