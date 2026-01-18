@@ -1,5 +1,6 @@
 import { CTAButton } from "@/components/ui/cta-button";
 import { Heart, CheckCircle2 } from "lucide-react";
+import logoMaternologia from "@/assets/logo-maternologia.svg";
 
 const benefits = [
   "Os 3 fundamentos para uma maternidade mais leve, mesmo em meio ao puerpério",
@@ -21,6 +22,15 @@ export const HeroSection = () => {
 
       <div className="container relative z-10 px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-6 animate-fade-in">
+            <img 
+              src={logoMaternologia} 
+              alt="Maternologia - 100 Dias Sem Caos" 
+              className="h-12 md:h-16 w-auto mx-auto"
+            />
+          </div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-8 animate-fade-in">
             <Heart className="w-4 h-4 text-primary" />
