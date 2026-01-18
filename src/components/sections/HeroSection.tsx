@@ -23,7 +23,7 @@ export const HeroSection = () => {
       <div className="container relative z-10 px-4 pt-2 pb-16 md:pt-4 md:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
-          <div className="mb-4 animate-fade-in">
+          <div className="mb-1 animate-fade-in">
             <img 
               src={logoMaternologia} 
               alt="Maternologia - 100 Dias Sem Caos" 
