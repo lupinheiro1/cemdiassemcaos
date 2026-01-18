@@ -1,4 +1,5 @@
 import { Heart, Star, Users } from "lucide-react";
+import luizaPhoto from "@/assets/luiza-pinheiro.webp";
 
 export const AuthorSection = () => {
   return (
@@ -16,8 +17,12 @@ export const AuthorSection = () => {
             <div className="md:flex">
               {/* Image placeholder */}
               <div className="md:w-1/3 bg-gradient-to-br from-rose-light to-peach-light flex items-center justify-center p-8">
-                <div className="w-48 h-48 bg-card rounded-full flex items-center justify-center shadow-lg">
-                  <span className="font-serif text-6xl text-primary">LP</span>
+                <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg">
+                  <img 
+                    src={luizaPhoto} 
+                    alt="Luiza Pinheiro" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
