@@ -6,6 +6,9 @@ export const HighlightSection = () => {
     <section className="py-16 md:py-24 bg-gradient-to-r from-rose-light via-peach-light to-lavender-light">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Pensado de mãe para mãe 💕
+          </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-6">
             O maior erro da maioria dos cursos de maternidade é focar apenas no
             bebê que já está nos seus braços. Porém, eles esquecem de uma verdade
