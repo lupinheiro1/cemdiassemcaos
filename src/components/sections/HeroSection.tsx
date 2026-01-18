@@ -13,7 +13,7 @@ const benefits = [
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
+    <section className="relative flex items-start justify-center overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-rose-light via-background to-peach-light" />
       <div className="absolute top-20 left-10 w-32 h-32 bg-sage-light rounded-full blur-3xl opacity-60" />
