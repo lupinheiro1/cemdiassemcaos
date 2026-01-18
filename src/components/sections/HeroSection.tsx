@@ -20,14 +20,14 @@ export const HeroSection = () => {
       <div className="absolute bottom-40 right-10 w-48 h-48 bg-lavender-light rounded-full blur-3xl opacity-50" />
       <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
 
-      <div className="container relative z-10 px-4 pt-6 pb-16 md:pt-8 md:pb-24">
+      <div className="container relative z-10 px-4 pt-2 pb-16 md:pt-4 md:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
-          <div className="mb-6 animate-fade-in">
+          <div className="mb-4 animate-fade-in">
             <img 
               src={logoMaternologia} 
               alt="Maternologia - 100 Dias Sem Caos" 
-              className="h-20 md:h-28 w-auto mx-auto"
+              className="h-24 md:h-36 w-auto mx-auto"
             />
           </div>
 
