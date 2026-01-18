@@ -13,21 +13,21 @@ const benefits = [
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-rose-light via-background to-peach-light" />
       <div className="absolute top-20 left-10 w-32 h-32 bg-sage-light rounded-full blur-3xl opacity-60" />
       <div className="absolute bottom-40 right-10 w-48 h-48 bg-lavender-light rounded-full blur-3xl opacity-50" />
       <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
 
-      <div className="container relative z-10 px-4 py-16 md:py-24">
+      <div className="container relative z-10 px-4 pt-6 pb-16 md:pt-8 md:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-6 animate-fade-in">
             <img 
               src={logoMaternologia} 
               alt="Maternologia - 100 Dias Sem Caos" 
-              className="h-12 md:h-16 w-auto mx-auto"
+              className="h-20 md:h-28 w-auto mx-auto"
             />
           </div>
 
