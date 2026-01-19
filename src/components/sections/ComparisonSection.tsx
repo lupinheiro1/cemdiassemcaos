@@ -1,4 +1,5 @@
 import { Check, Minus } from "lucide-react";
+import { CTAButton } from "@/components/ui/cta-button";
 
 const comparisons = [
   {
@@ -66,6 +67,10 @@ export const ComparisonSection = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="text-center mt-10">
+            <CTAButton>Quero Viver Meus 100 Dias Sem Caos</CTAButton>
           </div>
         </div>
       </div>
