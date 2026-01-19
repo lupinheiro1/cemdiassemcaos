@@ -50,15 +50,15 @@ export const TransformationSection = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Before */}
-            <div className="bg-muted/50 rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-xl font-semibold text-muted-foreground mb-6 text-center">
+            <div className="bg-muted-box rounded-2xl p-6 md:p-8">
+              <h3 className="font-serif text-xl font-semibold text-foreground/70 mb-6 text-center">
                 Sem o 100 Dias Sem Caos
               </h3>
               <div className="space-y-3">
                 {transformations.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 p-3 bg-card/50 rounded-lg"
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg"
                   >
                     <X className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{item.before}</span>
