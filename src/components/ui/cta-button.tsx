@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Heart } from "lucide-react";
 
 interface CTAButtonProps {
   children: React.ReactNode;
@@ -20,7 +19,6 @@ export const CTAButton = ({ children, className, onClick }: CTAButtonProps) => {
         className
       )}
     >
-      <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
       {children}
     </button>
   );
