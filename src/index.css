@@ -46,15 +46,16 @@ All colors MUST be HSL.
 
     /* Custom colors for the theme */
     --rose: 350 60% 65%;
-    --rose-light: 350 70% 95%;
-    --sage: 140 25% 75%;
+    --rose-light: 350 70% 96%;
+    --sage: 140 25% 55%;
     --sage-light: 140 25% 92%;
-    --peach: 20 70% 80%;
-    --peach-light: 20 70% 94%;
-    --lavender: 280 30% 85%;
-    --lavender-light: 280 30% 95%;
+    --peach: 20 70% 75%;
+    --peach-light: 20 50% 96%;
+    --lavender: 280 30% 75%;
+    --lavender-light: 280 30% 96%;
     --cream: 30 50% 97%;
     --warm-brown: 20 25% 25%;
+    --muted-box: 30 25% 90%;
   }
 }
 
