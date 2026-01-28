@@ -3,13 +3,13 @@ import { cn } from "@/lib/utils";
 interface CTAButtonProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export const CTAButton = ({ children, className }: CTAButtonProps) => {
   return (
-    <a
-      href="https://pay.hotmart.com/E104054938B?checkoutMode=10"
-      className={cn(
+    <button
+      onClick={onClick}
         "group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold",
         "bg-primary text-primary-foreground rounded-full",
         "shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30",
