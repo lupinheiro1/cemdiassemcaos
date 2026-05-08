@@ -47,7 +47,7 @@ export const HeroSection = () => {
             <span className="relative inline-block">
               leveza
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--sage))" strokeWidth="3" strokeLinecap="round" />
+                <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--peach))" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </span>
             , segurança e direção
