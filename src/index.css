@@ -8,54 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Soft cream background */
-    --background: 30 50% 98%;
-    --foreground: 20 25% 25%;
+    /* Warm ivory background */
+    --background: 38 35% 96%;
+    --foreground: 230 28% 14%;
 
-    /* Cards with warm white */
-    --card: 30 40% 99%;
-    --card-foreground: 20 25% 25%;
+    /* Cards: soft ivory */
+    --card: 40 40% 98%;
+    --card-foreground: 230 28% 14%;
 
-    --popover: 30 40% 99%;
-    --popover-foreground: 20 25% 25%;
+    --popover: 40 40% 98%;
+    --popover-foreground: 230 28% 14%;
 
-    /* Primary - Soft rose/blush */
-    --primary: 350 60% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Deep indigo (anchor of trust & rest) */
+    --primary: 232 45% 32%;
+    --primary-foreground: 40 35% 97%;
 
-    /* Secondary - Soft sage green */
-    --secondary: 140 25% 92%;
-    --secondary-foreground: 140 30% 30%;
+    /* Secondary - Soft indigo wash */
+    --secondary: 230 25% 92%;
+    --secondary-foreground: 232 45% 28%;
 
-    /* Muted - Warm beige */
-    --muted: 30 30% 94%;
-    --muted-foreground: 20 15% 45%;
+    /* Muted - Warm sand */
+    --muted: 35 22% 91%;
+    --muted-foreground: 230 15% 38%;
 
-    /* Accent - Soft peach */
-    --accent: 20 70% 92%;
-    --accent-foreground: 20 50% 35%;
+    /* Accent - Apricot warmth */
+    --accent: 22 65% 92%;
+    --accent-foreground: 18 55% 32%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 40 35% 97%;
 
-    --border: 30 30% 88%;
-    --input: 30 30% 88%;
-    --ring: 350 60% 65%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 22 75% 60%;
 
     --radius: 0.75rem;
 
-    /* Custom colors for the theme */
-    --rose: 350 60% 65%;
-    --rose-light: 350 70% 96%;
-    --sage: 140 25% 55%;
-    --sage-light: 140 25% 92%;
-    --peach: 20 70% 75%;
-    --peach-light: 20 50% 96%;
-    --lavender: 280 30% 75%;
-    --lavender-light: 280 30% 96%;
-    --cream: 30 50% 97%;
-    --warm-brown: 20 25% 25%;
-    --muted-box: 30 25% 90%;
+    /* Custom theme tokens (mapped to Indigo & Apricot palette) */
+    --rose: 232 45% 32%;          /* primary indigo (alias) */
+    --rose-light: 22 60% 94%;     /* warm apricot wash */
+    --sage: 232 38% 42%;          /* mid indigo (used for accents/checks) */
+    --sage-light: 230 30% 93%;    /* cool indigo wash */
+    --peach: 22 75% 60%;          /* apricot accent */
+    --peach-light: 22 65% 93%;    /* apricot wash */
+    --lavender: 230 25% 55%;      /* dusty indigo */
+    --lavender-light: 230 22% 92%;/* neutral indigo wash */
+    --cream: 40 35% 97%;          /* ivory */
+    --warm-brown: 230 28% 16%;    /* deep graphite-indigo */
+    --muted-box: 35 18% 89%;      /* sand box */
   }
 }
 
