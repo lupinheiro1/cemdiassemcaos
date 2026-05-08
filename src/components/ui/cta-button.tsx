@@ -13,10 +13,10 @@ export const CTAButton = ({ children, className }: CTAButtonProps) => {
       rel="noopener noreferrer"
       className={cn(
         "group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold",
-        "bg-primary text-primary-foreground rounded-full",
-        "shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30",
-        "transform hover:-translate-y-0.5 transition-all duration-300",
-        "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+        "bg-gradient-to-br from-peach to-[hsl(18_70%_48%)] text-white rounded-full",
+        "shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40",
+        "transform hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300",
+        "focus:outline-none focus:ring-2 focus:ring-peach focus:ring-offset-2",
         className
       )}
     >
