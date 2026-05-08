@@ -22,10 +22,6 @@ const transformations = [
     after: "Comunicação mais leve e estruturada",
   },
   {
-    before: 'Culpa por não estar "dando conta"',
-    after: "Confiança de estar fazendo o melhor",
-  },
-  {
     before: "Busca aleatória no Google e redes",
     after: "Conteúdo organizado, pronto para consultar",
   },
