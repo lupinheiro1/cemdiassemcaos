@@ -8,7 +8,7 @@ const benefits = [
   "Conselhos que você gostaria de ouvir da sua melhor amiga, não do Google",
   "Reflexões sinceras pra aliviar a culpa e reforçar o seu instinto",
   "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
-  "Ah, e zero julgamentos. Só apoio, carinho e direção!",
+  "Um espaço sem julgamentos, com apoio, carinho e direção.",
 ];
 
 export const HeroSection = () => {
@@ -42,10 +42,9 @@ export const HeroSection = () => {
           {/* Headline */}
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             100 dias sem caos:{" "}
-            <span className="text-primary">o guia essencial</span> para mães que
-            querem viver o início da maternidade com{" "}
+            <span className="text-primary">o guia essencial</span> para viver o início da maternidade com{" "}
             <span className="relative inline-block">
-              leveza
+              mais leveza
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                 <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--peach))" strokeWidth="3" strokeLinecap="round" />
               </svg>
@@ -72,7 +71,7 @@ export const HeroSection = () => {
                   className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors"
                 >
                   <CheckCircle2 className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-                  <span className="text-foreground">{benefit}</span>
+                  <span className="text-foreground font-light">{benefit}</span>
                 </div>
               ))}
             </div>

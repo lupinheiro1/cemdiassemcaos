@@ -59,7 +59,7 @@ export const FinalCTASection = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Heart className="w-5 h-5 text-rose-light" />
-              <span className="font-serif text-lg text-cream">100 Dias Sem Caos</span>
+              <span className="font-serif text-lg text-cream font-light">100 Dias Sem Caos</span>
             </div>
             <p className="text-sm text-cream/80 mb-2">
               © 2026 Luiza Pinheiro. Todos os direitos reservados.

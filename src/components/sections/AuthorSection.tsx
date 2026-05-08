@@ -33,11 +33,11 @@ export const AuthorSection = () => {
                 </h3>
                 <p className="text-muted-foreground mb-4">
                   Ex-gerente de operações e atual especialista em{" "}
-                  <strong className="text-foreground">maternidade possível</strong>.
+                  <strong className="text-foreground font-light">maternidade possível</strong>.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   Mãe de dois, esposa de médico pediatra (que revisa todo o conteúdo),
-                  e fundadora do <strong className="text-foreground">Método Mãe Jardineira</strong> e criadora do projeto{" "}
+                  e fundadora do <strong className="text-foreground font-light">Método Mãe Jardineira</strong> e criadora do projeto{" "}
                   <em>100 Dias Sem Caos</em>, ela trocou planilhas por paninhos de
                   ombro e descobriu que o amor materno não precisa ser acompanhado de
                   caos.

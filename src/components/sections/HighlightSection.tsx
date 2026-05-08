@@ -7,12 +7,12 @@ export const HighlightSection = () => {
       <div className="container px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Pensado de mãe para mãe 💕
+            Pensado de mãe para mãe
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-6">
             O maior erro da maioria dos cursos de maternidade é focar apenas no
             bebê que já está nos seus braços. Porém, eles esquecem de uma verdade
-            incontestável.
+            simples.
           </p>
 
           <div className="bg-card rounded-2xl shadow-xl p-8 md:p-12 mb-8">
