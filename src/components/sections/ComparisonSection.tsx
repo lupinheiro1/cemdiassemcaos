@@ -3,24 +3,24 @@ import { CTAButton } from "@/components/ui/cta-button";
 
 const comparisons = [
   {
-    solution: "Google / Redes",
-    reality: "Informal, confuso, disperso",
-    ours: "Organizado, direto ao ponto",
+    solution: "Google e redes sociais",
+    reality: "Informações soltas, contraditórias e difíceis de filtrar",
+    ours: "Conteúdo organizado, direto ao ponto e pensado para o puerpério real",
   },
   {
-    solution: "Grupos / WhatsApp",
-    reality: "Palpites e opiniões",
-    ours: "Orientação clara e segura",
+    solution: "Grupos e WhatsApp",
+    reality: "Palpites, opiniões e excesso de informação",
+    ours: "Orientação clara, segura e sem sobrecarga",
   },
   {
-    solution: "Cursos longos",
-    reality: "Teóricos, cansativos",
-    ours: "Prático e aplicável no caos",
+    solution: "Cursos muito longos",
+    reality: "Teóricos, cansativos e difíceis de aplicar",
+    ours: "Prático, leve e possível de consultar no dia a dia",
   },
   {
-    solution: "Apoio de profissionais",
-    reality: "Caro e nem sempre acessível",
-    ours: "Acessível e imediato",
+    solution: "Apoio profissional isolado",
+    reality: "Importante, mas nem sempre acessível o tempo todo",
+    ours: "Um apoio acessível para consultar quando você precisar",
   },
 ];
 
@@ -38,7 +38,7 @@ export const ComparisonSection = () => {
               <thead>
                 <tr className="border-b-2 border-sage">
                   <th className="text-left py-4 px-4 font-serif text-lg">Solução</th>
-                  <th className="text-left py-4 px-4 font-serif text-lg">Como é na real</th>
+                  <th className="text-left py-4 px-4 font-serif text-lg">Como costuma ser</th>
                   <th className="text-left py-4 px-4 font-serif text-lg text-primary">
                     100 Dias Sem Caos
                   </th>

@@ -2,11 +2,26 @@ import { Book, FileSpreadsheet, FileText, Calendar, Gift, Shield, Zap, Headphone
 import { CTAButton } from "@/components/ui/cta-button";
 
 const items = [
-  { icon: Book, text: "Guia principal (eBook completo)" },
-  { icon: FileSpreadsheet, text: "Bônus 1: Planilha de Enxoval Simplificado" },
-  { icon: FileText, text: "Bônus 2: Plano de Parto Simples" },
-  { icon: FileText, text: "Bônus 3: Lista Mala Maternidade" },
-  { icon: Calendar, text: "Bônus 4: Calendário dos 100 Dias: Seus Principais Marcos sem Caos" },
+  {
+    icon: Book,
+    title: "Guia principal",
+    text: "O eBook completo do 100 Dias Sem Caos, com orientações práticas e emocionais para viver o início da maternidade com mais leveza, segurança e direção.",
+  },
+  {
+    icon: FileSpreadsheet,
+    title: "Planilha de Enxoval Simplificado",
+    text: "Para evitar excessos e focar no que realmente importa.",
+  },
+  {
+    icon: FileText,
+    title: "Plano de Parto Simples",
+    text: "Um apoio prático para organizar suas preferências com mais clareza.",
+  },
+  {
+    icon: FileText,
+    title: "Lista Mala Maternidade",
+    text: "Tudo o que você precisa levar, sem correria de última hora.",
+  },
 ];
 
 const guarantees = [
@@ -31,17 +46,20 @@ export const OfferSection = () => {
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-4 p-4 rounded-xl ${
+                  className={`flex items-start gap-4 p-4 rounded-xl ${
                     index === 0 ? "bg-rose-light" : "bg-accent/50"
                   }`}
                 >
-                  <div className="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-sm">
+                  <div className="w-10 h-10 bg-card rounded-full flex items-center justify-center shadow-sm shrink-0">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <span className={`font-medium ${index === 0 ? "text-lg" : ""}`}>
-                    {index !== 0 && <Gift className="w-4 h-4 inline-block mr-2 text-peach" />}
-                    {item.text}
-                  </span>
+                  <div>
+                    <p className={`font-semibold ${index === 0 ? "text-lg" : ""}`}>
+                      {index !== 0 && <Gift className="w-4 h-4 inline-block mr-2 text-peach" />}
+                      {item.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1 font-light">{item.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -49,16 +67,13 @@ export const OfferSection = () => {
             {/* Pricing */}
             <div className="text-center">
               <p className="text-muted-foreground line-through text-lg mb-1">
-                Valor original: R$ 297
+                Valor original: R$ 127
               </p>
               <p className="font-serif text-4xl md:text-5xl font-bold text-primary mb-2">
-                R$ 97
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                Promoção de lançamento
+                Hoje: R$ 47
               </p>
               <p className="text-sm text-muted-foreground mb-8 italic">
-                É menos do que um pacote de fraldas (e você ainda vai usar muitos!) 👶
+                Um valor simbólico para esse momento que muda tudo.
               </p>
 
               <CTAButton>Quero Viver Meus 100 Dias Sem Caos</CTAButton>
@@ -69,7 +84,7 @@ export const OfferSection = () => {
           <div className="bg-sage-light rounded-2xl p-8 text-center mb-8">
             <Shield className="w-16 h-16 text-sage mx-auto mb-4" />
             <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
-              Garantia Incondicional de 7 Dias
+              Você pode adquirir sem medo
             </h3>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Você tem 7 dias para testar. Se achar que o material não te ajuda de
