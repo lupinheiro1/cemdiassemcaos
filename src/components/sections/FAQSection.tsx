@@ -9,22 +9,27 @@ const faqs = [
   {
     question: "Esse guia serve para mães de primeira viagem?",
     answer:
-      "Ele foi pensado principalmente para você, mãe de primeira viagem! Coloquei tudo o que eu gostaria de ter ouvido no meu primeiro puerpério, e que teria facilitado e MUITO a minha vida com um recém-nascido no colo. Mas ele também serve para as mamães que já são marinheiras antigas, mas que precisam ressignificar começos traumáticos. Aqui você encontra zero julgamentos, porque disso já recebemos demais sem nem precisar pedir.",
+      "Sim — principalmente para elas. O 100 Dias Sem Caos foi pensado para ajudar mães que estão entrando nesse universo agora e querem viver esse começo com mais leveza, direção e segurança.",
   },
   {
     question: "Vou precisar de muito tempo para ler?",
     answer:
-      'A resposta curta é não. Apesar de ter bastante informação, escrevi para ser uma leitura gostosa e fluida. Mas ele vai te provocar algumas reflexões, e a prática pede um pouco de tempo. Se sua vida já é corrida agora, imagina com um bebê recém-nascido? A ideia de esperar "ter tempo" é ilusória. O que o livro oferece não é mais uma tarefa, é uma ferramenta pra diminuir o peso das tarefas que já existem e, acima de tudo, criar o melhor início possível para a melhor fase da sua vida!',
+      "Não. O guia foi pensado para ser leve, direto e fácil de consultar, mesmo na rotina corrida do puerpério. Você pode ler no seu tempo e voltar sempre que precisar.",
   },
   {
     question: "O conteúdo é prático? Vou conseguir aplicar mesmo?",
     answer:
-      "O 100 dias sem caos tem tanto uma parte mais teórica (focada em ser um abraço em você), e uma parte prática, com o objetivo de realmente desenhar o que você precisa antecipar para esses meses iniciais com o seu bebê.",
+      "Sim. Além das reflexões emocionais, o material traz orientações práticas e possíveis de aplicar na vida real, sem perfeccionismo e sem complicação.",
   },
   {
     question: "Ajuda também no emocional?",
     answer:
-      "Principalmente! O nosso emocional vira uma montanha-russa nos primeiros meses com o bebê (se já não virou durante a gravidez). Eu negligenciei isso no meu primeiro puerpério, e agora, jamais. Enquanto muitos conteúdos de maternidade focam nos aspectos materiais, aqui você vai focar no começo de tudo: em você.",
+      "Muito. O puerpério não é só uma fase prática — ele também mexe profundamente com a identidade, emoções e relações da mãe. Por isso, o guia olha para você como parte central dessa experiência.",
+  },
+  {
+    question: "E se eu comprar e sentir que não era o que eu precisava?",
+    answer:
+      "Você tem 7 dias de garantia para acessar o material com calma. Se sentir que ele não faz sentido para você, devolvemos 100% do valor.",
   },
 ];
 
