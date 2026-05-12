@@ -1,5 +1,5 @@
 import { CTAButton } from "@/components/ui/cta-button";
-import { Clock, Heart, Sparkles } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 export const FinalCTASection = () => {
   return (
