@@ -2,36 +2,28 @@ import { X, Check } from "lucide-react";
 
 const transformations = [
   {
-    before: "\n",
-    after: "\n",
+    before: "Sensação constante de estar perdida",
+    after: "Clareza sobre o que fazer em cada fase",
   },
   {
-    before: "Dúvidas a cada novo desafio",
-    after: "Respostas diretas, sem enrolação",
+    before: "Dúvidas a cada nova fase",
+    after: "Decisões mais seguras e leves",
   },
   {
-    before: "Exaustão física e emocional sem trégua",
-    after: "Orientações para reduzir a sobrecarga",
+    before: "Exaustão física e emocional acumulando",
+    after: "Mais organização no dia a dia",
   },
   {
-    before: "Palpites por todos os lados",
-    after: "Autonomia para seguir as próprias escolhas",
+    before: "Palpites de todos os lados",
+    after: "Autonomia para seguir suas próprias escolhas",
   },
   {
-    before: "Conflitos com o parceiro por falta de alinhamento",
-    after: "Comunicação mais leve e estruturada",
+    before: "Conflitos por falta de alinhamento",
+    after: "Comunicação mais tranquila nos relacionamentos",
   },
   {
-    before: "Busca aleatória no Google e redes",
-    after: "Conteúdo organizado, pronto para consultar",
-  },
-  {
-    before: "Sensação de estar sozinha na maternidade",
-    after: "Acolhimento real, mesmo sem grupo ou curso",
-  },
-  {
-    before: "Sensação de culpa constante",
-    after: "Entende que o erro faz parte do processo",
+    before: "Busca constante por respostas sem saber em quem confiar",
+    after: "Confiança de que você está fazendo o melhor possível",
   },
 ];
 

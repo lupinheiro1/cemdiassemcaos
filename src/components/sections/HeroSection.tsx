@@ -4,9 +4,10 @@ import logoMaternologia from "@/assets/logo-maternologia.svg";
 
 const benefits = [
   "Os 3 fundamentos para uma maternidade mais leve, mesmo em meio ao puerpério",
-  "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
+  "Um passo a passo para atravessar os primeiros dias com mais segurança, com decisões e conversas já antecipadas.",
   "Conselhos que você gostaria de ouvir da sua melhor amiga, não do Google",
   "Reflexões sinceras pra aliviar a culpa e reforçar o seu instinto",
+  "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
   "Um espaço sem julgamentos, com apoio, carinho e direção.",
 ];
 
