@@ -3,23 +3,23 @@ import { AlertCircle, Heart, Clock, Shield } from "lucide-react";
 const stats = [
   {
     icon: AlertCircle,
-    stat: "Ter apoio muda completamente essa experiência\n",
-    description: "Mães com suporte emocional atravessam esse período com mais segurança e menos culpa.",
+    stat: "1 em cada 4 mulheres desenvolve depressão pós-parto",
+    description: "E, na maioria dos casos, isso vem acompanhado de falta de preparo e sobrecarga emocional.",
   },
   {
     icon: Heart,
-    stat: "Crescente",
-    description: "número de divórcios até um ano após o nascimento do bebê",
+    stat: "O número de divórcios aumenta no primeiro ano do bebê",
+    description: "Porque, sem alinhamento e comunicação, a rotina vira um campo de tensão.",
   },
   {
     icon: Clock,
-    stat: "Tempo",
-    description: "economizado com conhecimento de confiança em um único lugar",
+    stat: "Tempo é um dos recursos mais escassos no puerpério",
+    description: "E sair procurando informação em vários lugares só aumenta a confusão.",
   },
   {
     icon: Shield,
-    stat: "Proteção",
-    description: "mães com suporte emocional enfrentam melhor o puerpério",
+    stat: "Ter apoio muda completamente essa experiência",
+    description: "Mães com suporte emocional atravessam esse período com mais segurança e menos culpa.",
   },
 ];
 
