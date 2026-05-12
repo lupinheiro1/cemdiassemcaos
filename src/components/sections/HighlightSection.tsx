@@ -34,7 +34,7 @@ export const HighlightSection = () => {
 
           <div className="bg-card rounded-xl p-6 shadow-md max-w-xl mx-auto mb-10">
             <p className="text-sm text-muted-foreground italic">
-              Clique no botão abaixo e dê o primeiro passo para transformar sua maternidade hoje mesmo
+              Por isso, separamos com muito carinho e dedicação o que sempre é esquecido nesse início, mas que faz toda a diferença.
             </p>
           </div>
 

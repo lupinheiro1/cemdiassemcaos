@@ -2,8 +2,8 @@ import { X, Check } from "lucide-react";
 
 const transformations = [
   {
-    before: "Sentimento constante de estar perdida",
-    after: "Sentimento de viver o dia a dia com direção e sentido",
+    before: "\n",
+    after: "\n",
   },
   {
     before: "Dúvidas a cada novo desafio",
