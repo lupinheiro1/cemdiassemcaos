@@ -7,7 +7,6 @@ const benefits = [
   "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
   "Conselhos que você gostaria de ouvir da sua melhor amiga, não do Google",
   "Reflexões sinceras pra aliviar a culpa e reforçar o seu instinto",
-  "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
   "Um espaço sem julgamentos, com apoio, carinho e direção.",
 ];
 
