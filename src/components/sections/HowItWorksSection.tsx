@@ -39,14 +39,12 @@ export const HowItWorksSection = () => {
             </h2>
             <div className="bg-sage-light rounded-2xl p-8 md:p-10">
               <p className="text-lg text-foreground font-light mb-4">
-                O "100 Dias Sem Caos" é um guia digital que organiza tudo o que você
-                precisa saber sobre o puerpério — desde os fundamentos emocionais até
-                os cuidados práticos.
+                O "100 Dias Sem Caos" é um guia digital que organiza, de forma simples e prática, o que você precisa saber para atravessar o puerpério com mais leveza e segurança.
+                <br /><br />
+                Ele reúne orientações emocionais e práticas para o dia a dia, ajudando você a tomar decisões com mais clareza, reduzir a sobrecarga e viver esse início com mais direção.
               </p>
               <p className="text-lg text-foreground font-light">
-                A base do <strong className="text-secondary-foreground">Método Mãe Jardineira</strong>, ele mostra como cultivar uma rotina
-                emocionalmente estável, fortalecendo o vínculo com o bebê enquanto
-                você constrói a melhor versão de si mesma.
+                A base do <strong className="text-secondary-foreground">Método Mãe Jardineira</strong>, o guia te ajuda a construir uma rotina adaptada para a sua realidade, fortalecendo o vínculo com o bebê enquanto te ajuda a se sentir mais segura ao longo desse processo.
               </p>
             </div>
           </div>
@@ -73,7 +71,7 @@ export const HowItWorksSection = () => {
           </div>
 
           <p className="text-center text-xl font-serif font-semibold text-primary">
-            Esse material é um tesouro para a sua maternidade. ✨
+            Esse material pode fazer a diferença para você.
           </p>
         </div>
       </div>

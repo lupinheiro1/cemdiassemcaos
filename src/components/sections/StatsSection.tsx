@@ -3,8 +3,8 @@ import { AlertCircle, Heart, Clock, Shield } from "lucide-react";
 const stats = [
   {
     icon: AlertCircle,
-    stat: "1 em 4",
-    description: "mulheres desenvolvem depressão pós-parto",
+    stat: "Ter apoio muda completamente essa experiência\n",
+    description: "Mães com suporte emocional atravessam esse período com mais segurança e menos culpa.",
   },
   {
     icon: Heart,
