@@ -14,8 +14,8 @@ const items = [
   },
   {
     icon: FileText,
-    title: "Plano de Parto Simples",
-    text: "Um apoio prático para organizar suas preferências com mais clareza.",
+    title: "Guia de comunicação assertiva",
+    text: "Scripts de conversa para tornar a comunicação nos 100 dias mais objetiva e mais leve",
   },
   {
     icon: FileText,
