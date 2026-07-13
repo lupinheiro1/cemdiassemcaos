@@ -269,26 +269,34 @@ Leitura tecnica:
 - Medicoes Lighthouse desta etapa:
   - `.lighthouse-local-mobile-after-interaction-gate.json`
   - `.lighthouse-local-mobile-after-interaction-gate-run2.json`
+  - `.lighthouse-local-mobile-after-interaction-gate-run3.json`
+  - `.lighthouse-local-mobile-after-interaction-gate-run4.json`
+  - `.lighthouse-local-mobile-after-interaction-gate-run5.json`
+- Validacao de tracking (escopo tecnico desta etapa):
+  - gatilhos de primeira interacao ativos (`pointerdown`, `keydown`, `touchstart`, `scroll`)
+  - fallback temporal ativo em `7000 ms`
+  - protecao de carga unica (`__gtmLoaded`) preservada
+  - `noscript` preservado para cenarios sem JS
 
 ### Comparativo da Etapa 1 (antes desta etapa vs depois desta etapa)
 
 Base de comparacao:
-- Antes desta etapa: media pos-ajuste de LCP (`.lighthouse-local-mobile-after-lcp-tune.json` + `.lighthouse-local-mobile-after-lcp-tune-run2.json`)
-- Depois desta etapa: media das 2 novas medicoes de interacao (`after-interaction-gate` run1 e run2)
+- Antes desta etapa: mediana dos 2 runs pos-ajuste de LCP (`.lighthouse-local-mobile-after-lcp-tune.json` + `.lighthouse-local-mobile-after-lcp-tune-run2.json`)
+- Depois desta etapa: mediana dos 5 runs de interacao (`after-interaction-gate` run1..run5)
 
 | Indice | Antes desta etapa | Depois desta etapa | Delta |
 |---|---:|---:|---:|
-| Performance score | 0.65 | 0.75 | +0.10 |
-| FCP | 2496.25 ms | 2489.61 ms | -6.64 ms (-0.27%) |
-| LCP | 2917.25 ms | 2944.14 ms | +26.89 ms (+0.92%) |
-| Speed Index | 2537.01 ms | 2489.61 ms | -47.40 ms (-1.87%) |
-| TBT | 1642.25 ms | 668.75 ms | -973.50 ms (-59.28%) |
-| TTI | 6585.81 ms | 3276.93 ms | -3308.88 ms (-50.24%) |
-| Main-thread work | 3917.19 ms | 2363.80 ms | -1553.39 ms (-39.65%) |
-| JS execution (bootup-time) | 1551.18 ms | 358.64 ms | -1192.54 ms (-76.88%) |
+| Performance score | 0.65 | 0.74 | +0.09 |
+| FCP | 2496.25 ms | 2496.99 ms | +0.74 ms (+0.03%) |
+| LCP | 2917.25 ms | 2996.78 ms | +79.53 ms (+2.73%) |
+| Speed Index | 2537.01 ms | 2496.99 ms | -40.02 ms (-1.58%) |
+| TBT | 1642.25 ms | 725.50 ms | -916.75 ms (-55.82%) |
+| TTI | 6585.81 ms | 3326.79 ms | -3259.02 ms (-49.48%) |
+| Main-thread work | 3917.19 ms | 2499.00 ms | -1418.20 ms (-36.20%) |
+| JS execution (bootup-time) | 1551.18 ms | 386.12 ms | -1165.06 ms (-75.11%) |
 
 Leitura tecnica da etapa:
 - Nao houve alteracao de layout/estilo/UI observavel: mudanca foi apenas de timing de terceiros.
 - Ganho expressivo de interatividade (TBT/TTI/main-thread), com score global melhor.
-- LCP ficou praticamente estavel, com leve variacao para cima dentro de faixa pequena.
+- FCP ficou estavel e LCP piorou levemente na mediana, mas sem regressao visual observada.
 - O resultado e coerente com a estrategia: reduzir competicao de scripts de terceiros no carregamento inicial.
