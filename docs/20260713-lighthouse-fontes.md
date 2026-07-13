@@ -516,3 +516,58 @@ Leitura tecnica:
 - Ajuste e estritamente de timing de pintura, sem alteracao de design final.
 - Evidencia de codigo:
   - [src/components/sections/HeroSection.tsx](../src/components/sections/HeroSection.tsx)
+
+## Etapa Extra 2 - Commit, tag, deploy cPanel e teste real (2026-07-13)
+
+### Plano
+
+- Fechar ciclo operacional completo solicitado:
+  - commit + push no `main`
+  - criar tag de referencia
+  - publicar no cPanel HostGator (`public_html/100-dias-sem-caos/`)
+  - validar em producao com Lighthouse na URL real
+
+### Execucao
+
+- Build validado antes do release: `npm run build` (ok)
+- Commit realizado:
+  - hash: `2eef1a0`
+  - mensagem: `perf: remove css blocking and add cpanel cache policy`
+- Push realizado para `origin/main` (ok)
+- Tag anotada criada e publicada:
+  - `cemdias-perf-20260713`
+
+- Deploy cPanel (SSH/SCP) realizado com sucesso:
+  - host: `108.179.252.173`
+  - porta: `2222`
+  - destino: `/home2/mate6679/public_html/100-dias-sem-caos/`
+  - arquivos de raiz enviados: `index.html`, `favicon.ico`, `placeholder.svg`, `robots.txt`, `logo-maternologia-100-dias-sem-caos-v2.png`, `.htaccess`
+  - `assets/` remoto recriado e repopulado com os hashes atuais
+
+### Validacao em producao
+
+- Headers HTTP confirmados no dominio real:
+  - HTML (`/100-dias-sem-caos/`): `Cache-Control: public, max-age=300, must-revalidate`
+  - JS hash atual (`/100-dias-sem-caos/assets/index-CT2YQqNu.js`):
+    - `Cache-Control: public, max-age=31536000, immutable`
+
+- Lighthouse producao pos-deploy:
+  - arquivo: `.lighthouse-prod-mobile-after-cpanel-update.json`
+  - URL: `https://maternologia.com.br/100-dias-sem-caos/`
+  - metricas:
+    - `score: 0.31`
+    - `FCP: 6050.391 ms`
+    - `LCP: 7706.426 ms`
+    - `TBT: 4297.956 ms`
+    - `TTI: 17666.605 ms`
+    - `third-party blocking: 3434.436 ms`
+  - audits alvo desta etapa:
+    - `render-blocking-resources`: `score 1`, `numericValue 0`
+    - `uses-long-cache-ttl`: `score 0.5` (restando principalmente terceiros)
+
+### Leitura tecnica
+
+- Objetivos tecnicos aplicados no codigo e no servidor foram efetivos:
+  - CSS bloqueante do bundle proprio neutralizado
+  - cache longo de assets hash ativado em producao
+- Mesmo assim, o run real ficou pior no score global por alta carga de terceiros (GTM/Facebook) na janela da medicao.
