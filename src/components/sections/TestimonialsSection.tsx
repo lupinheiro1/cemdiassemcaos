@@ -1,3 +1,13 @@
+/**
+ * @file TestimonialsSection.tsx
+ * @description Secao de depoimentos com imagens em carrossel horizontal.
+ *
+ * @changed_by GitHub Copilot (GPT-5.3-Codex)
+ * @change_date 2026-07-13T00:00:00
+ * @reason Reduzir concorrencia de rede no first paint para beneficiar LCP.
+ * @changes
+ *   - Marca imagens de depoimentos como lazy para priorizar recursos acima da dobra.
+ */
 import depoimentoJaria from "@/assets/depoimento-jaria.webp";
 import depoimentoSimara from "@/assets/depoimento-simara.webp";
 import depoimentoTaynara from "@/assets/depoimento-taynara.webp";
@@ -37,6 +47,9 @@ export const TestimonialsSection = () => {
               <img
                 src={testimonial.image}
                 alt={testimonial.alt}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="w-full h-auto object-cover"
               />
             </div>

@@ -1,3 +1,13 @@
+/**
+ * @file HeroSection.tsx
+ * @description Secao principal da landing e principal candidata a LCP.
+ *
+ * @changed_by GitHub Copilot (GPT-5.3-Codex)
+ * @change_date 2026-07-13T00:00:00
+ * @reason Reduzir LCP sem alterar o visual final da pagina.
+ * @changes
+ *   - Remove atraso de animacao do H1 para permitir pintura mais cedo do elemento LCP.
+ */
 import { CTAButton } from "@/components/ui/cta-button";
 import { Heart, CheckCircle2 } from "lucide-react";
 import logoMaternologia from "@/assets/logo-maternologia.svg";
@@ -40,7 +50,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
             100 dias sem caos:{" "}
             <span className="text-primary">o guia essencial</span> para viver o início da maternidade com{" "}
             <span className="relative inline-block">
