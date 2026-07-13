@@ -4,9 +4,9 @@
  *
  * @changed_by GitHub Copilot (GPT-5.3-Codex)
  * @change_date 2026-07-13T00:00:00
- * @reason Reduzir LCP sem alterar o visual final da pagina.
+ * @reason Atacar atraso de renderizacao do elemento LCP apontado no Lighthouse.
  * @changes
- *   - Remove atraso de animacao do H1 para permitir pintura mais cedo do elemento LCP.
+ *   - Remove animacao com delay do subtitulo do Hero para permitir pintura imediata.
  */
 import { CTAButton } from "@/components/ui/cta-button";
 import { Heart, CheckCircle2 } from "lucide-react";
@@ -63,7 +63,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
             Descubra como atravessar os primeiros 100 dias com o bebê sem culpa,
             sem desespero e sem se perder de si mesma — mesmo sendo mãe de
             primeira viagem.

@@ -300,3 +300,219 @@ Leitura tecnica da etapa:
 - Ganho expressivo de interatividade (TBT/TTI/main-thread), com score global melhor.
 - FCP ficou estavel e LCP piorou levemente na mediana, mas sem regressao visual observada.
 - O resultado e coerente com a estrategia: reduzir competicao de scripts de terceiros no carregamento inicial.
+
+## Analise em Tempo Real (Local 127.0.0.1 x Producao HostGator)
+
+### Metodo
+
+- Base comparativa executada no mesmo dia, com 3 runs por ambiente.
+- Local: `http://127.0.0.1:4173/100-dias-sem-caos/`
+- Producao: `https://maternologia.com.br/100-dias-sem-caos/`
+- Consolidacao por mediana para reduzir ruido entre runs.
+
+Arquivos usados:
+- Local: `.lighthouse-local-127-now.json`, `.lighthouse-local-127-run2.json`, `.lighthouse-local-127-run3.json`
+- Producao: `.lighthouse-prod-mobile-post-deploy.json`, `.lighthouse-prod-mobile-post-deploy-run2.json`, `.lighthouse-prod-mobile-post-deploy-run3.json`
+
+### Comparativo (mediana de 3 runs)
+
+| Metrica | Local (127.0.0.1) | Producao (HostGator) | Diferenca (Prod - Local) |
+|---|---:|---:|---:|
+| Performance score | 0.72 | 0.34 | -0.38 |
+| FCP | 2512.12 ms | 5170.21 ms | +2658.09 ms |
+| LCP | 2946.03 ms | 6590.31 ms | +3644.28 ms |
+| Speed Index | 2543.03 ms | 5122.00 ms | +2578.97 ms |
+| TBT | 771.00 ms | 3074.44 ms | +2303.44 ms |
+| TTI | 3420.53 ms | 16383.83 ms | +12963.30 ms |
+| Main-thread work | 2777.87 ms | 7236.75 ms | +4458.88 ms |
+| JS execution (bootup-time) | 393.60 ms | 3303.07 ms | +2909.47 ms |
+
+### Leitura tecnica da diferenca
+
+- O gap nao vem de HTML/CSS visual diferente, e sim do custo de runtime no ambiente real.
+- Em producao, os terceiros entram com peso alto durante a janela da auditoria (GTM/gtag/Facebook), enquanto no local esse impacto quase nao aparece no trace.
+- No run mediano de producao, o audit de terceiros reportou bloqueio relevante da main thread (ordem de ~2s), coerente com o aumento de `TBT`, `TTI`, `main-thread work` e `bootup-time`.
+- Rede real, TLS, CDN e latencias externas ampliam a janela total e aumentam a chance de os scripts de terceiros competirem com a renderizacao inicial.
+
+Conclusao pratica:
+- O local continua util para validar regressao de codigo proprio.
+- A decisao final de performance para usuario real deve priorizar a mediana de producao.
+
+## Checklist Operacional GTM (Item 1 - Painel)
+
+Objetivo:
+- Reduzir impacto de terceiros em producao (TBT/TTI/main-thread) sem alterar layout, estilo ou fluxo visual da landing.
+
+### 1) Inventario de tags atuais no container `GTM-5MLMK2BS`
+
+No GTM (Workspace atual):
+- Exportar lista de tags e triggers ligados ao dominio `maternologia.com.br`.
+- Identificar explicitamente as tags que carregam:
+  - Google Analytics (`gtag/js` / GA4)
+  - Meta Pixel (`fbevents.js`)
+  - quaisquer tags de remarketing em `All Pages`
+
+Regra de seguranca:
+- Nenhuma tag nao essencial deve permanecer em `All Pages` para a rota da landing.
+
+### 2) Criar segmentacao da rota da landing
+
+Variavel/condicao alvo:
+- Path comeca com `/100-dias-sem-caos`
+
+Criar trigger de pagina:
+- `TR - Cemdias - Page View`
+  - Tipo: `Page View`
+  - Condicao: `Page Path starts with /100-dias-sem-caos`
+
+### 3) Criar triggers de atraso seguro (sem mudar UI)
+
+Criar os triggers abaixo (escopo: landing):
+- `TR - Cemdias - Window Loaded`
+  - Tipo: `Window Loaded`
+  - Condicao: path da landing
+
+- `TR - Cemdias - Timer 7000ms`
+  - Tipo: `Timer`
+  - Intervalo: `7000`
+  - Limite: `1`
+  - Condicao: path da landing
+
+- `TR - Cemdias - Scroll 25%`
+  - Tipo: `Scroll Depth`
+  - Vertical: `25`
+  - Condicao: path da landing
+
+- `TR - Cemdias - Click CTA`
+  - Tipo: `Click - All Elements` (ou link)
+  - Condicao: clique nos CTAs principais da landing (selector/texto padronizado)
+
+### 4) Remapear disparo das tags (tag por tag)
+
+Aplicacao recomendada:
+- GA4 Config (essencial de pagina):
+  - remover `All Pages`
+  - usar `TR - Cemdias - Window Loaded`
+
+- Meta Pixel Base:
+  - remover `All Pages`
+  - usar `TR - Cemdias - Timer 7000ms` e `TR - Cemdias - Scroll 25%`
+
+- Remarketing/retargeting nao essencial:
+  - remover `All Pages`
+  - usar apenas `TR - Cemdias - Click CTA` ou eventos de funil especificos
+
+Regra de ouro:
+- Manter no carregamento inicial apenas o estritamente necessario para pageview.
+- Tudo que for remarketing/complementar deve ir para interacao/atraso.
+
+### 5) QA no proprio GTM antes de publicar
+
+No modo `Preview` (Tag Assistant):
+- Confirmar que na rota da landing:
+  - tags nao essenciais NAO disparam no `Page View`
+  - disparam apenas apos `Window Loaded`, `Timer` ou interacao
+
+- Conferir eventos minimos:
+  - page_view presente
+  - eventos de CTA continuam chegando
+
+### 6) Publicacao e rollback
+
+Publicar versao com nome claro:
+- `perf-cemdias-delay-third-party-YYYYMMDD`
+
+Salvar rollback pronto:
+- manter versao anterior identificada para retorno em 1 clique
+
+### 7) Validacao de resultado (obrigatoria)
+
+Depois de publicar no GTM:
+- Rodar 5 Lighthouse em producao e comparar mediana com baseline atual.
+- Criterio de aprovacao:
+  - melhora de TBT/TTI/main-thread
+  - sem regressao visual/UX
+  - sem quebra de pageview/CTA tracking
+
+## Terceira Secao - Ataque direto aos alertas do report (CSS bloqueante + cache TTL)
+
+### Objetivo
+
+- Atacar os dois alertas mostrados no report atual sem alterar o visual final da landing:
+  - `Solicitacoes que bloquearam a renderizacao` (CSS principal)
+  - `Use ciclos de vida eficientes de cache` (TTL curto de assets)
+
+### Implementacao
+
+- Arquivo alterado: [vite.config.ts](../vite.config.ts)
+  - adicionado plugin de build `inline-build-css`
+  - no build de producao, o CSS emitido pelo Vite passa a ser injetado inline no `index.html`
+  - os links `<link rel="stylesheet" ...>` gerados para CSS sao removidos do HTML final
+  - efeito esperado: eliminar a solicitacao de CSS bloqueante (`assets/index-*.css`) na navegacao inicial
+
+- Arquivo criado: [public/.htaccess](../public/.htaccess)
+  - cache longo para assets estaticos versionados (css/js/woff2/svg/png/webp/jpg):
+    - `Cache-Control: public, max-age=31536000, immutable`
+  - html com revalidacao curta:
+    - `Cache-Control: public, max-age=300, must-revalidate`
+  - efeito esperado: remover diagnostico de TTL `4h` e reduzir custo em visitas repetidas
+
+### Validacao tecnica desta etapa
+
+- `npm run build` executado com sucesso apos as mudancas
+- conferido no `dist/index.html`:
+  - CSS presente inline em bloco `<style id="inlined-vite-css">...`
+  - ausencia de `<link rel="stylesheet"` para `assets/index-*.css`
+- conferido no `dist/`:
+  - `.htaccess` copiado a partir de `public/.htaccess` para ser publicado junto no HostGator
+
+### Observacao de deploy
+
+- Para o ajuste de TTL surtir efeito em producao, o deploy precisa incluir o arquivo `.htaccess` na pasta publicada (`public_html/100-dias-sem-caos/`).
+- Sem esse arquivo no servidor, o alerta de cache continuara apontando TTL curto definido pelo host/CDN.
+
+### Evidencia de auditoria apos aplicar (preview local)
+
+- Arquivo: `.lighthouse-local-mobile-after-css-inline.json`
+- URL auditada: `http://localhost:4173/100-dias-sem-caos/`
+- Resultado do audit `render-blocking-resources`:
+  - `score: 1`
+  - `numericValue: 0`
+  - sem itens bloqueantes de CSS do proprio site
+
+- Resultado do audit `uses-long-cache-ttl` nesta rodada local:
+  - `score: 0.5`
+  - `2 resources found`
+  - itens restantes foram apenas `connect.facebook.net` (terceiros via GTM), com `max-age` curto do proprio fornecedor
+
+Leitura tecnica:
+- O alerta de CSS bloqueante foi efetivamente neutralizado no build local atual.
+- O que restou de cache nesta rodada nao e do bundle proprio, e sim de terceiros (Facebook), fora de controle por `.htaccess` do dominio.
+
+## Etapa Extra - Ataque ao alerta de LCP no subtitulo do Hero (2026-07-13)
+
+### Plano
+
+- Atacar diretamente a mensagem do Lighthouse em "Detalhamento da LCP", que apontou atraso de renderizacao do elemento:
+  - `<p class="... animate-fade-in" style="animation-delay: 0.2s;">`
+- Remover apenas a animacao com delay do subtitulo do Hero (elemento candidato a LCP no run analisado), sem alterar texto, tipografia, espacamento ou hierarchy visual.
+- Validar com build de producao para garantir que a mudanca e segura e sem regressao de compilacao.
+
+### Execucao
+
+- Arquivo alterado: [src/components/sections/HeroSection.tsx](../src/components/sections/HeroSection.tsx)
+- Mudanca aplicada no subtitulo do Hero:
+  - removido `animate-fade-in`
+  - removido `style={{ animationDelay: "0.2s" }}`
+- Mantidos sem alteracao:
+  - conteudo textual
+  - classes de tamanho/cor/espacamento
+  - estrutura do Hero
+
+### Resultado
+
+- O elemento apontado no relatorio deixa de depender de atraso de animacao para aparecer.
+- Isso reduz risco de novo "Atraso na renderizacao do elemento" quando o subtitulo vira candidato de LCP em corridas especificas.
+- Ajuste e estritamente de timing de pintura, sem alteracao de design final.
+- Evidencia de codigo:
+  - [src/components/sections/HeroSection.tsx](../src/components/sections/HeroSection.tsx)
