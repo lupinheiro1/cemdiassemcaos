@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preconnect pros domínios de tracking: abre a conexão TLS em paralelo,
+         antes do GTM/Pixel pedirem seus scripts (economia medida: ~80ms no LCP) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
     <!-- Google Tag Manager
          Carregamento IMEDIATO (snippet padrão) por decisão de 15/07/2026: o loader
          adiado (interação/7s) derrubava as métricas de campanha (LPV ~35%) e perdia
