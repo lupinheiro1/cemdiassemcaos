@@ -70,7 +70,7 @@ export const OfferSection = () => {
                 Valor original: R$ 127
               </p>
               <p className="font-serif text-4xl md:text-5xl font-bold text-primary mb-2">
-                Hoje: R$ 47
+                Hoje: R$ 37
               </p>
               <p className="text-sm text-muted-foreground mb-8 italic">
                 Um valor simbólico para esse momento que muda tudo.
