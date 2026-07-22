@@ -1,14 +1,8 @@
-/**
- * @file Index.tsx
- * @modified 2026-07-13
- * @authors Marcelo Arana + GitHub Copilot GPT-5.3-Codex
- * @reason Registrar tentativa de otimizacao de layout revertida por regressao de LCP
- * @objective Manter a composicao original da landing sem alterar UI/UX
- * @solution Preservar estrutura de secoes original e documentar o rollback no relatorio tecnico
- */
 import { HeroSection } from "@/components/sections/HeroSection";
+import { TargetAudienceSection } from "@/components/sections/TargetAudienceSection";
 import { HighlightSection } from "@/components/sections/HighlightSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTABannerSection } from "@/components/sections/CTABannerSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -24,17 +18,33 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <HeroSection />
+
+      <TargetAudienceSection />
+
       <HighlightSection />
+
       <HowItWorksSection />
+
+      <BenefitsSection />
+
       <StatsSection />
+
       <CTABannerSection />
+
       <TestimonialsSection />
+
       <TransformationSection />
+
       <OfferSection />
+
       <ObjectionsSection />
+
       <ComparisonSection />
+
       <AuthorSection />
+
       <FAQSection />
+
       <FinalCTASection />
     </main>
   );

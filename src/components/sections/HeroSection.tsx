@@ -1,94 +1,109 @@
 /**
  * @file HeroSection.tsx
- * @description Secao principal da landing e principal candidata a LCP.
- *
- * @changed_by GitHub Copilot (GPT-5.3-Codex)
- * @change_date 2026-07-13T00:00:00
- * @reason Atacar atraso de renderizacao do elemento LCP apontado no Lighthouse.
- * @changes
- *   - Remove animacao com delay do subtitulo do Hero para permitir pintura imediata.
+ * @description Seção principal da landing page.
  */
-import { CTAButton } from "@/components/ui/cta-button";
-import { Heart, CheckCircle2 } from "lucide-react";
-import logoMaternologia from "@/assets/logo-maternologia.svg";
 
-const benefits = [
-  "Os 3 fundamentos para uma maternidade mais leve, mesmo em meio ao puerpério",
-  "Um passo a passo para atravessar os primeiros dias com mais segurança, com decisões e conversas já antecipadas.",
-  "Conselhos que você gostaria de ouvir da sua melhor amiga, não do Google",
-  "Reflexões sinceras pra aliviar a culpa e reforçar o seu instinto",
-  "Ferramentas práticas para evitar o caos sem virar uma mãe robô",
-  "Um espaço sem julgamentos, com apoio, carinho e direção.",
-];
+import { Check, Heart } from "lucide-react";
+import logoMaternologia from "@/assets/logo-maternologia.svg";
+import { CTAButton } from "@/components/ui/cta-button";
 
 export const HeroSection = () => {
   return (
     <section className="relative flex items-start justify-center overflow-hidden">
-      {/* Background decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-rose-light via-background to-peach-light" />
-      <div className="absolute top-20 left-10 w-32 h-32 bg-sage-light rounded-full blur-3xl opacity-60" />
-      <div className="absolute bottom-40 right-10 w-48 h-48 bg-lavender-light rounded-full blur-3xl opacity-50" />
-      <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
 
-      <div className="container relative z-10 px-4 pt-2 pb-6 md:pt-4 md:pb-10">
+      <div className="hidden md:block absolute top-20 left-10 w-32 h-32 bg-sage-light rounded-full blur-3xl opacity-60" />
+      <div className="hidden md:block absolute bottom-40 right-10 w-48 h-48 bg-lavender-light rounded-full blur-3xl opacity-50" />
+      <div className="hidden md:block absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
+
+      <div className="container relative z-10 px-4 pt-2 pb-10 md:pt-4 md:pb-14">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Logo */}
-          <div className="mb-1 animate-fade-in">
-            <img 
-              src={logoMaternologia} 
-              alt="Maternologia - 100 Dias Sem Caos" 
+          <div className="mb-1">
+            <img
+              src={logoMaternologia}
+              alt="Maternologia - 100 Dias Sem Caos"
+              width="360"
+              height="144"
+              decoding="async"
               className="h-24 md:h-36 w-auto mx-auto"
             />
           </div>
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-8">
             <Heart className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-muted-foreground">
-              Guia Essencial para Mães
+              Guia prático para o início da maternidade
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
-            100 dias sem caos:{" "}
-            <span className="text-primary">o guia essencial</span> para viver o início da maternidade com{" "}
-            <span className="relative inline-block">
-              mais leveza
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--peach))" strokeWidth="3" strokeLinecap="round" />
-              </svg>
-            </span>
-            , segurança e direção
+          <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.08] mb-6 tracking-tight">
+            Todo mundo ensina a preparar o bebê.
+            <br />
+            Mas quem ensina a preparar a{" "}
+            <span className="text-[hsl(18_70%_48%)]">mãe?</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-            Descubra como atravessar os primeiros 100 dias com o bebê sem culpa,
-            sem desespero e sem se perder de si mesma — mesmo sendo mãe de
-            primeira viagem.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Se você está grávida e quer viver o início da maternidade com mais{" "}
+            <strong className="font-semibold text-foreground">
+              segurança, leveza e direção
+            </strong>
+            , leia esta página com atenção.
           </p>
 
-          {/* Benefits */}
-          <div className="bg-card rounded-2xl shadow-lg p-6 md:p-8 mb-10 text-left animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <h3 className="font-serif text-xl md:text-2xl font-semibold text-center mb-6">
-              O que tem nesse e-book que parece abraço de mãe?
-            </h3>
-            <div className="grid md:grid-cols-2 gap-3">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-                  <span className="text-foreground font-light">{benefit}</span>
-                </div>
-              ))}
-            </div>
+          <div className="mt-6 mb-6">
+            <span className="inline bg-[hsl(18_70%_48%)] px-3 py-1 text-lg md:text-xl font-bold leading-relaxed text-white box-decoration-clone">
+              Você vai descobrir:
+            </span>
           </div>
 
-          {/* CTA Button */}
-          <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <ul className="max-w-3xl mx-auto space-y-5 text-left text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
+              <span>
+                <strong className="font-semibold text-foreground">
+                  O que realmente precisa ser preparado antes do bebê nascer
+                </strong>{" "}
+                (e quase ninguém ensina).
+              </span>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
+              <span>
+                Como tomar decisões com mais confiança, lidar com os palpites e{" "}
+                <strong className="font-semibold text-foreground">
+                  preservar seus relacionamentos
+                </strong>{" "}
+                nesse período de tantas mudanças.
+              </span>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
+              <span>
+                Como ter a tranquilidade de saber que{" "}
+                <strong className="font-semibold text-foreground">
+                  você está fazendo o melhor para o seu bebê
+                </strong>
+                , mesmo em meio a tantas opiniões e informações conflitantes.
+              </span>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
+              <span>
+                Quais são os principais pontos de atenção sobre{" "}
+                <strong className="font-semibold text-foreground">
+                  saúde mental, amamentação e sono
+                </strong>
+                , reunidos em um único lugar para que você não precise enfrentar
+                essa fase sozinha.
+              </span>
+            </li>
+          </ul>
+
+          <div className="mt-8">
             <CTAButton>Quero Viver Meus 100 Dias Sem Caos</CTAButton>
           </div>
         </div>
