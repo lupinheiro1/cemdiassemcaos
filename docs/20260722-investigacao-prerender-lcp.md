@@ -508,21 +508,23 @@ ausente ou menos de 7 CTAs.
 ## Comandos
 
 ```bash
-npm run build                         # SPA antiga (não usar para deploy agora)
-node scripts/build-prerender.mjs      # preview  -> dist-prerender/
-node scripts/build-prerender-prod.mjs # PRODUÇÃO -> dist-prerender-prod/
+npm run build     # gera a produção  -> dist-prerender-prod/
+npm run deploy    # publica no cPanel + valida o site no ar
 ```
 
-Deploy **cirúrgico** (só `index.html` + `assets/`, nunca a pasta inteira):
+São esses dois. `npm run build` gera exatamente o que vai para produção — não há
+comando "especial" para o deploy real. Os demais são acessórios:
 
 ```bash
-scp -i ~/.ssh/lfcm_hostgator_deploy_ed25519_bash -P 2222 \
-  dist-prerender-prod/assets/* \
-  mate6679@108.179.252.173:/home2/mate6679/public_html/100-dias-sem-caos/assets/
-scp -i ~/.ssh/lfcm_hostgator_deploy_ed25519_bash -P 2222 \
-  dist-prerender-prod/index.html \
-  mate6679@108.179.252.173:/home2/mate6679/public_html/100-dias-sem-caos/
+npm run build:preview  # pasta de teste /100-dias-sem-caos-prerender/
+npm run build:spa      # SPA antiga, sem prerender (referência/rollback)
 ```
+
+`npm run deploy` envia **apenas** `index.html` + `assets/` — nunca a pasta
+inteira, porque `obrigado/` (página de conversão) tem deploy próprio e seria
+apagada. O script confere `obrigado/` antes e depois, valida H1/GTM/CTAs/noindex
+no build, e testa o site no ar (inclusive se o bundle voltou como JavaScript, para
+pegar 404 cacheado na Cloudflare). Aborta em qualquer divergência.
 
 ## Rollback
 

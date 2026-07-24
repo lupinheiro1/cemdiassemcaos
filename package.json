@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:prerender": "node scripts/build-prerender.mjs",
+    "build": "node scripts/build-prerender-prod.mjs",
+    "build:preview": "node scripts/build-prerender.mjs",
+    "build:spa": "vite build",
     "build:dev": "vite build --mode development",
+    "deploy": "node scripts/deploy.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
