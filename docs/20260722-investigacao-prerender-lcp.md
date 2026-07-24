@@ -404,3 +404,62 @@ abaixo até da produção. Otimizou-se a métrica secundária às custas da prin
 - CLS ~0,10-0,11 na versão da Luiza: real, mas secundário; não gastar de novo
   horas nele antes de resolver o UTM e medir LPV real.
 - 4 tentativas de CLS documentadas acima: nenhuma funcionou; não repetir.
+
+---
+
+## Correção do CTA sem UTM — APLICADA e VALIDADA (2026-07-24)
+
+Bloqueador nº 1 resolvido. `scripts/inject-utm-bootstrap.mjs` injeta, no fim do
+`<body>` (depois dos `<a>`, antes do bundle deferido), um script inline síncrono
+de **442 bytes** que replica `buildCheckoutUrl()` e reescreve os `href` de
+`pay.hotmart.com` com os parâmetros da URL da visitante. Executa em ~1 ms, contra
+os ~1,3 s que o bundle levava.
+
+### Paridade com o React (7/7 casos)
+
+O script produz **exatamente** a mesma URL que `src/lib/checkoutUrl.ts` — testado
+caso a caso (url limpa, Meta completo, Google Ads, utm_content/term, parâmetro não
+rastreado, só fbclid, todos os 7 juntos). Isso garante que a hidratação não gere
+mismatch: o React recalcula e encontra o mesmo valor.
+
+### Validação em navegador real (Chrome headless via CDP)
+
+URL testada: `?utm_source=facebook&utm_medium=cpc&utm_campaign=jul26&fbclid=IwAR999`
+
+| Verificação | Resultado |
+| --- | --- |
+| CTAs no DOM | 7 |
+| Todos com `utm_source` + `fbclid` | ✅ |
+| Link final | `...checkoutMode=10&utm_source=facebook&utm_medium=cpc&utm_campaign=jul26&fbclid=IwAR999` |
+| `checkoutMode=10` preservado | ✅ |
+| URL limpa → link idêntico ao original | ✅ |
+| FAQ (Radix) hidratado | ✅ `data-state="closed"` nos 3 primeiros |
+| Erros de hidratação | nenhum |
+
+Publicado em `/100-dias-sem-caos-prerender/` (só o `index.html`; assets inalterados).
+
+## ⚠️ ACHADO CRÍTICO: `/obrigado/` não sai do build
+
+A produção tem `public_html/100-dias-sem-caos/obrigado/` — página de conversão,
+com GTM próprio (`GTM-5MLMK2BS`), **deploy separado que não é gerado pelo build da
+landing** e não está no repositório.
+
+**Qualquer deploy que substitua a pasta `100-dias-sem-caos/` inteira APAGA a
+página de obrigado.** O deploy precisa ser cirúrgico (só `index.html` + `assets/`)
+ou refazer `obrigado/` depois.
+
+Backup completo da produção (2,6 MB, incluindo `obrigado/`) versionado em
+`deploy/100-dias-sem-caos-PRODUCAO-backup-20260724/`.
+
+## Estado dos bloqueadores para produção
+
+| # | Bloqueador | Status |
+| --- | --- | --- |
+| 1 | CTA sem UTM (~1,3 s) | ✅ **RESOLVIDO** e validado em browser |
+| 2 | `/obrigado/` sumir no deploy | ⚠️ mapeado — exige deploy cirúrgico |
+| 3 | CLS ~0,11 | 🟡 aberto (aceitável: limiar é 0,1; 4 tentativas falharam) |
+| 4 | Beacon do Pixel 2,07s vs 1,91s | 🔴 **não medido** — decisivo para LPV |
+| 5 | Brotli no JS (Cloudflare) | 🔴 pendente (painel, ~105 ms) |
+
+O nº 4 é o único que ainda pode inverter a decisão: se o Pixel disparar mais tarde
+no prerender, ganha-se LCP e perde-se LPV — o oposto do objetivo.
