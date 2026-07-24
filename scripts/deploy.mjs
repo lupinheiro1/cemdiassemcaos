@@ -13,7 +13,7 @@
  *           divergência.
  */
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
@@ -69,13 +69,32 @@ if (!noAr.includes("GTM-5MLMK2BS")) die("Site no ar sem GTM. RESTAURE o backup."
 
 const jsPath = noAr.match(/\/100-dias-sem-caos\/assets\/index-[^"]+\.js/)?.[0];
 if (!jsPath) die("Não achei o bundle no HTML publicado.");
-const jsResp = await fetch(`https://maternologia.com.br${jsPath}?cb=${Date.now()}`);
+
+// SEM cache-buster: é assim que o visitante real pede. A Cloudflare pode ter
+// cacheado um 404 desse caminho (plano Free não expõe purge) e devolver a página
+// de erro no lugar do bundle — a página quebra e um teste com ?cb= não veria.
+const jsResp = await fetch(`https://maternologia.com.br${jsPath}`);
 const tipo = jsResp.headers.get("content-type") || "";
+
 if (!tipo.includes("javascript")) {
-  die(`O bundle voltou como "${tipo}" em vez de javascript.\n   ` +
-      `Provável 404 cacheado na Cloudflare. Renomeie o arquivo em assets/ e reenvie o HTML.`);
+  console.log(`⚠ bundle voltou como "${tipo}" — 404 cacheado na Cloudflare. Renomeando…`);
+
+  const nome = jsPath.split("/").pop();
+  const novo = nome.replace(/\.js$/, `-c${Date.now().toString(36).slice(-3)}.js`);
+  ssh(`cp ${REMOTE}/assets/${nome} ${REMOTE}/assets/${novo}`);
+
+  const htmlPath = join(DIST, "index.html");
+  writeFileSync(htmlPath, readFileSync(htmlPath, "utf-8").replaceAll(nome, novo), "utf-8");
+  sh("scp", ["-i", KEY, "-P", PORT, "-q", htmlPath, `${HOST}:${REMOTE}/`]);
+
+  await new Promise((r) => setTimeout(r, 2000));
+  const retry = await fetch(`https://maternologia.com.br/100-dias-sem-caos/assets/${novo}`);
+  const tipo2 = retry.headers.get("content-type") || "";
+  if (!tipo2.includes("javascript")) die(`Ainda "${tipo2}" após renomear. RESTAURE o backup.`);
+  console.log(`✓ contornado — bundle agora é ${novo} (${tipo2})`);
+} else {
+  console.log(`✓ bundle servido como ${tipo}`);
 }
-console.log(`✓ bundle servido como ${tipo}`);
 
 const obrigadoDepois = await fetch(`${SITE}obrigado/`, { cache: "no-store" });
 if (!obrigadoDepois.ok) die("obrigado/ parou de responder! RESTAURE o backup.");

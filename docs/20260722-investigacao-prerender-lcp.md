@@ -641,3 +641,41 @@ O timing de `fbevents.js` (o que dá para medir) melhorou no prerender.
 **Medir LPV real no Meta em 2-3 dias.** É o objetivo do projeto e nenhum
 Lighthouse ou PageSpeed responde. Se o LPV não subir com LCP na metade, o gargalo
 está em outro lugar (ex.: sub-medição de pixel, hipótese nunca investigada).
+
+---
+
+## Limpeza pós-deploy — 2026-07-24
+
+**Pastas de teste removidas do cPanel.** Sobrou apenas `/100-dias-sem-caos/`.
+
+### Cache envenenado voltou — e agora o deploy se cura sozinho
+
+Ao remover a gambiarra `-v2.js` (do incidente de ontem), o bundle voltou ao nome
+original — que a Cloudflare ainda tinha cacheado como 404. O site quebrou de novo
+para visitantes reais, **e minha validação não pegou**: ela testava com
+`?cb=` (cache-buster), que ignora justamente o cache que estava envenenado.
+
+Corrigido em `scripts/deploy.mjs`: a verificação agora usa a URL **exata** que o
+visitante pede e, se detectar `text/html` no lugar do bundle, **renomeia o arquivo
+no servidor, reescreve o HTML e republica automaticamente**. Testado: detectou e
+se curou sozinho (`index-Ga1-Pe-Q-cm9j.js`).
+
+Lição: validação com cache-buster não prova nada sobre cache. Sempre testar como
+o visitante real pede.
+
+### 404 para as URLs de teste removidas
+
+Após apagar as pastas, as URLs ainda devolviam **200** — o fallback de SPA da raiz
+(`RewriteRule . /index.html`) servia o site da Maternologia **sem noindex**:
+conteúdo duplicado aos olhos do Google numa URL que não existe mais.
+
+Adicionada regra em `public_html/.htaccess` (backup em `.htaccess.bak-20260724`),
+acima do fallback:
+
+```apache
+RewriteRule ^100-dias-sem-caos-prerender - [R=404,L]
+```
+
+Verificado após aplicar: `-prerender` e `-prerender1` → 404; produção,
+`/obrigado/`, site da Maternologia, redirect `/cemdiassemcaos` (301) e redirect
+WhatsApp (302) → todos intactos.
