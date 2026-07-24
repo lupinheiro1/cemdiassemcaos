@@ -1,3 +1,12 @@
+/**
+ * @file OfferSection.tsx
+ * @modified 2026-07-24
+ * @authors Marcelo Arana + Claude Opus 4.8
+ * @reason Ajuste do preço da oferta do anúncio ativo.
+ * @objective Preço "Hoje" passa de R$ 37 para R$ 47 (valor original R$ 127 mantido).
+ * @solution Troca do único texto de preço na seção; o link do checkout (Hotmart)
+ *           não muda — o valor real é definido no produto da Hotmart, não aqui.
+ */
 import { Book, FileSpreadsheet, FileText, Calendar, Gift, Shield, Zap, Headphones } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
 
@@ -70,7 +79,7 @@ export const OfferSection = () => {
                 Valor original: R$ 127
               </p>
               <p className="font-serif text-4xl md:text-5xl font-bold text-primary mb-2">
-                Hoje: R$ 37
+                Hoje: R$ 47
               </p>
               <p className="text-sm text-muted-foreground mb-8 italic">
                 Um valor simbólico para esse momento que muda tudo.
