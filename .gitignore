@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Relatórios locais de Lighthouse (medições pontuais, não versionar)
+.lighthouse-*.json
+
+# Saída do build de prerender (gerada por scripts/build-prerender*.mjs)
+dist-prerender/
+dist-prerender-prod/
