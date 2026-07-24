@@ -9,27 +9,35 @@
  * @objective Remover o preload de fontes (revertendo a mudança de mais cedo hoje).
  * @solution preloadHeroFontsPlugin removido. Mantido o inline de CSS do Codex.
  */
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-function inlineBuildCssPlugin() {
+const CURRENT_BASE_PATH = "/100-dias-sem-caos/";
+const PRERENDER_BASE_PATH = "/100-dias-sem-caos-prerender/";
+
+function inlineBuildCssPlugin(): Plugin {
   return {
     name: "inline-build-css",
     apply: "build",
     enforce: "post",
-    transformIndexHtml(html: string, ctx: { bundle?: Record<string, { type: string; fileName: string; source?: string | Uint8Array }> }) {
+    transformIndexHtml(html, ctx) {
       if (!ctx?.bundle) return html;
 
-      const cssAssets = Object.values(ctx.bundle).filter(
-        (asset) => asset.type === "asset" && asset.fileName.endsWith(".css")
-      );
+      const cssSources = Object.values(ctx.bundle).flatMap((asset) => {
+        if (asset.type !== "asset" || !asset.fileName.endsWith(".css")) return [];
 
-      if (cssAssets.length === 0) return html;
+        return [
+          typeof asset.source === "string"
+            ? asset.source
+            : Buffer.from(asset.source ?? "").toString("utf-8"),
+        ];
+      });
 
-      const inlinedCss = cssAssets
-        .map((asset) => (typeof asset.source === "string" ? asset.source : Buffer.from(asset.source ?? "").toString("utf-8")))
+      if (cssSources.length === 0) return html;
+
+      const inlinedCss = cssSources
         .join("\n")
         .replace(/<\/style/gi, "<\\/style");
 
@@ -43,20 +51,59 @@ function inlineBuildCssPlugin() {
   };
 }
 
+function prerenderHtmlPlugin(enabled: boolean): Plugin {
+  return {
+    name: "prerender-html-entry",
+    apply: "build",
+    transformIndexHtml: {
+      order: "pre",
+      handler(html) {
+        if (!enabled) return html;
+
+        const currentEntry = '<script type="module" src="/src/main.tsx"></script>';
+        const prerenderEntry = '<script type="module" src="/src/prerender-client.tsx"></script>';
+
+        if (!html.includes(currentEntry)) {
+          throw new Error("[prerender] Entrada /src/main.tsx não encontrada no index.html.");
+        }
+
+        return html
+          .replace(currentEntry, prerenderEntry)
+          .replace(
+            "</head>",
+            '    <meta name="robots" content="noindex, nofollow" />\n  </head>'
+          );
+      },
+    },
+  };
+}
+
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: '/100-dias-sem-caos/',
-  server: {
-    host: "::",
-    port: 8080,
-    hmr: {
-      overlay: false,
+export default defineConfig(({ mode }) => {
+  const isPrerender = mode === "prerender";
+
+  return {
+    base: isPrerender ? PRERENDER_BASE_PATH : CURRENT_BASE_PATH,
+    build: {
+      outDir: isPrerender ? "dist-prerender" : "dist",
     },
-  },
-  plugins: [react(), inlineBuildCssPlugin(), mode === "development" && componentTagger()].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    server: {
+      host: "::",
+      port: 8080,
+      hmr: {
+        overlay: false,
+      },
     },
-  },
-}));
+    plugins: [
+      react(),
+      prerenderHtmlPlugin(isPrerender),
+      inlineBuildCssPlugin(),
+      mode === "development" && componentTagger(),
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+  };
+});

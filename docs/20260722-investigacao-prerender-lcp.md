@@ -463,3 +463,179 @@ Backup completo da produção (2,6 MB, incluindo `obrigado/`) versionado em
 
 O nº 4 é o único que ainda pode inverter a decisão: se o Pixel disparar mais tarde
 no prerender, ganha-se LCP e perde-se LPV — o oposto do objetivo.
+
+---
+
+# 🚀 PRERENDER EM PRODUÇÃO — 2026-07-23, 23:50 BRT
+
+**A landing `/100-dias-sem-caos/` agora é pré-renderizada.** Medição oficial
+(PageSpeed, Moto G Power emulado, 4G lenta), antes às 23:28 e depois às 23:52:
+
+| Métrica | Antes | Depois | Δ |
+| --- | --- | --- | --- |
+| **Desempenho** | 77 | **92** | +15 |
+| **LCP** | 4,6 s | **2,3 s** | **−2,3 s (−50%)** |
+| FCP | 2,6 s | 2,1 s | −0,5 s |
+| Speed Index | 2,6 s | 2,1 s | −0,5 s |
+| TBT | 200 ms | 110 ms | −90 ms |
+| **CLS** | 0,004 | **0,112** | +0,108 ⚠️ |
+| SEO | 100 | 100 | mantido |
+
+O CLS é o custo aceito: o texto pinta cedo e as 7 fontes (`font-display: swap`)
+reposicionam quando chegam. Trocar 2,3 s de tela branca por 0,108 de CLS foi
+decisão consciente.
+
+## Arquitetura final (a da Luiza, não a minha)
+
+O build de produção sai de `scripts/build-prerender-prod.mjs`, que reusa o
+pipeline dela (`build-prerender.mjs`) trocando três coisas:
+
+| | Preview (Luiza) | Produção (este) |
+| --- | --- | --- |
+| base | `/100-dias-sem-caos-prerender/` | `/100-dias-sem-caos/` |
+| outDir | `dist-prerender` | `dist-prerender-prod` |
+| meta robots | injeta `noindex` | **remove** (senão sai do Google) |
+| bootstrap UTM | — | injeta script inline |
+
+Vite gera cliente + SSR, então SVG/WebP/fontes usam as MESMAS URLs versionadas
+nos dois lados. `src/main.tsx` (SPA) segue intocado: `npm run build` continua
+produzindo a versão antiga.
+
+O script **aborta** se: root não encontrado, H1 ausente, texto da Hero ausente,
+asset sem URL, base errada, sobra de caminho preview, `noindex` presente, GTM
+ausente ou menos de 7 CTAs.
+
+## Comandos
+
+```bash
+npm run build                         # SPA antiga (não usar para deploy agora)
+node scripts/build-prerender.mjs      # preview  -> dist-prerender/
+node scripts/build-prerender-prod.mjs # PRODUÇÃO -> dist-prerender-prod/
+```
+
+Deploy **cirúrgico** (só `index.html` + `assets/`, nunca a pasta inteira):
+
+```bash
+scp -i ~/.ssh/lfcm_hostgator_deploy_ed25519_bash -P 2222 \
+  dist-prerender-prod/assets/* \
+  mate6679@108.179.252.173:/home2/mate6679/public_html/100-dias-sem-caos/assets/
+scp -i ~/.ssh/lfcm_hostgator_deploy_ed25519_bash -P 2222 \
+  dist-prerender-prod/index.html \
+  mate6679@108.179.252.173:/home2/mate6679/public_html/100-dias-sem-caos/
+```
+
+## Rollback
+
+```bash
+scp -r deploy/100-dias-sem-caos-PRODUCAO-backup-20260724/* \
+  mate6679@108.179.252.173:/home2/mate6679/public_html/100-dias-sem-caos/
+```
+
+---
+
+# 🔴 ERROS COMETIDOS NESTA SESSÃO (registro honesto)
+
+Sete erros, o que fizeram e como evitar. Escrito para não se repetirem.
+
+## 1. Confiar no Lighthouse local — o erro que custou o dia
+
+Rodei dezenas de medições locais. Elas **se contradiziam**: às 22h deram
+prerender 1,83 s × produção 2,69 s; às 23h deram prerender 4,86 s × produção
+2,40 s. Mesmas URLs, minutos de diferença.
+
+A máquina roda VSCode, Dropbox, Chrome e o próprio Chrome do Lighthouse. Mede-se
+a saturação da máquina, não o site. O PageSpeed do Google (servidor limpo) deu
+o número real e estável.
+
+**Regra:** nesta máquina, Lighthouse local **não decide nada**. Só PageSpeed.
+Isso já estava escrito na medição de 22/07 e eu ignorei o dia inteiro.
+
+## 2. Empilhar "correções" sem medir cada uma
+
+Adicionei fallback de fonte, peso 800, `font-display: optional` e logo 240 —
+todas para corrigir CLS. Medindo no fim: meu build ficou **pior que a produção**
+(LCP 2,95 s × 2,69 s). Otimizei a métrica secundária degradando a principal.
+
+**Regra:** uma mudança, uma medição. Se não melhora, reverte na hora.
+
+## 3. Sobrescrever a pasta da Luiza
+
+Às 21:28 publiquei meu build em `/100-dias-sem-caos-prerender/` sem verificar de
+quem era. Restaurado depois a partir de `D:\Dropbox\Marcelo\dist-prerender`.
+
+**Regra:** `ls -la` na pasta remota antes de escrever. Data recente = alguém
+mexeu; perguntar antes.
+
+## 4. Afirmar sobre React sem ver o package.json
+
+Disse que `fetchpriority` minúsculo era regressão, citando regra do React 19. O
+projeto usa **React 18**, onde o minúsculo é o correto. Quase reverti uma
+correção legítima. → memória `cemdias-stack-react18-nao-19`.
+
+## 5. Afirmar que o relatório da Luiza "exagerava" sobre UTM
+
+Disse que o enriquecimento de UTM antes da hidratação "não estava implementado".
+Estava — em `src/prerender-client.tsx`, linhas 27-31. Procurei no HTML e concluí
+errado. Meu bootstrap inline complementa (fecha a janela pré-bundle), não conserta.
+
+## 6. `npm run build` passou a gerar prerender
+
+Deixei o `package.json` com prerender no script `build` padrão. Qualquer deploy
+futuro subiria a versão bloqueada sem querer. Corrigido: `build` = SPA,
+`build:prerender*` = prerender.
+
+## 7. Envenenar o cache da Cloudflare no meio do deploy
+
+Testei numa pasta `-VALIDACAO` cujo HTML apontava para `/100-dias-sem-caos/assets/`.
+Os arquivos ainda não existiam lá → 404. A Cloudflare cacheou o 404 por 4 h
+(`max-age=14400`). No deploy real, o JS voltava `Content-Type: text/html` com
+2.305 bytes (página de erro) — **site quebrado**.
+
+Plano Free não tem purge por API disponível aqui. Resolvido **renomeando** o
+bundle (`index-Ga1-Pe-Q.js` → `-v2.js`): nome novo, cache limpo.
+
+**Regra:** nunca criar pasta de teste cujo HTML aponte para caminhos de produção
+inexistentes. Ou a pasta é autocontida, ou não se testa assim.
+
+**Resíduo:** `assets/index-Ga1-Pe-Q.js` (órfão, 219 KB) pode ser removido depois.
+
+---
+
+# ✅ ACHADOS PRESERVADOS
+
+## `/obrigado/` não sai do build
+
+`public_html/100-dias-sem-caos/obrigado/` é **deploy separado**, com GTM próprio,
+fora do repositório e do build. **Deploy que substitua a pasta inteira a apaga** —
+é a página de conversão. Backup em `deploy/100-dias-sem-caos-PRODUCAO-backup-20260724/`.
+
+## Brotli: indisponível no plano Free — ENCERRADO
+
+Confirmado no painel (Speed → Content Optimization): não há controle de Brotli;
+Compression Rules é recurso pago. Medido: valeria ~19,6 KB / ~105 ms. Contra os
+2.300 ms do prerender, **não justifica upgrade**. Assunto fechado.
+
+⚠️ **Nunca ligar, no mesmo painel:**
+- **Rocket Loader** — reordena JS, quebraria hidratação e provavelmente GTM/Pixel.
+- **Cloudflare Fonts** — reescreve carregamento de fontes, que é a origem do CLS.
+
+## Causa do CLS (medida, não suposta)
+
+Lighthouse `layout-shifts` aponta o `<h1>` refluindo **a cada fonte que chega**
+(inter-400, 500, 800...). São 8 arquivos com `font-display: swap`, cada um podendo
+trocar após a pintura. 4 tentativas de correção falharam (tabela acima). A única
+que resolveria — `font-display: optional` com `@font-face` próprios — **muda a
+aparência** em rede lenta. Decisão de produto.
+
+## Pixel: não é possível medir em headless
+
+O Meta Pixel detecta Chrome headless e recusa disparar PageView
+(`[Meta pixel] Bot traffic` no log). A comparação de beacon 2,07 s × 1,91 s do
+relatório anterior é, portanto, **inconclusiva** — não foi medida em tráfego real.
+O timing de `fbevents.js` (o que dá para medir) melhorou no prerender.
+
+# 📌 PRÓXIMO PASSO — o único que importa
+
+**Medir LPV real no Meta em 2-3 dias.** É o objetivo do projeto e nenhum
+Lighthouse ou PageSpeed responde. Se o LPV não subir com LCP na metade, o gargalo
+está em outro lugar (ex.: sub-medição de pixel, hipótese nunca investigada).
