@@ -1,0 +1,31 @@
+.print-checkbox {
+  box-sizing: border-box;
+  border: 0.7pt solid var(--copper);
+  background: white;
+}
+
+.print-control {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 8mm;
+  border-bottom: 0.7pt solid var(--copper);
+}
+
+.print-control--textarea {
+  min-height: 30mm;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 7mm,
+    var(--rule) 7mm,
+    var(--rule) 7.3mm
+  );
+}
+
+.print-table-field {
+  display: block;
+  width: 100%;
+  height: 12mm;
+  border-bottom: 0.5pt solid var(--rule);
+}

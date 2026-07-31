@@ -1,0 +1,1490 @@
+[
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.preparar-refeicoes",
+    "kind": "checkbox",
+    "label": "Preparar refeições",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.limpeza-da-casa",
+    "kind": "checkbox",
+    "label": "Limpeza da casa",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.mercado",
+    "kind": "checkbox",
+    "label": "Mercado",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.lavar-roupas",
+    "kind": "checkbox",
+    "label": "Lavar roupas",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.companhia-diaria",
+    "kind": "checkbox",
+    "label": "Companhia diária",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.conversar-quando-eu-estiver-sobrecarregada",
+    "kind": "checkbox",
+    "label": "Conversar quando eu estiver sobrecarregada",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.ficar-com-o-bebe-para-eu-descansar",
+    "kind": "checkbox",
+    "label": "Ficar com o bebê para eu descansar",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.companhia-em-consultas",
+    "kind": "checkbox",
+    "label": "Companhia em consultas",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.tarefas-profissionais",
+    "kind": "checkbox",
+    "label": "Tarefas profissionais",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.outro-matern-inline-003",
+    "kind": "checkbox",
+    "label": "Outro: MATERN_INLINE_003",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-01",
+    "kind": "choice-one",
+    "label": "Quero receber visitas na maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-01",
+    "kind": "choice-one",
+    "label": "Prefiro não receber visitas na maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-02",
+    "kind": "choice-one",
+    "label": "Quero receber visitas logo nos primeiros dias em casa.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-02",
+    "kind": "choice-one",
+    "label": "Prefiro esperar alguns dias antes de receber visitas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-receber-apenas-familiares-proximos-no-inicio",
+    "kind": "checkbox",
+    "label": "Quero receber apenas familiares próximos no início.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.tambem-me-sinto-confortavel-em-receber-amigos-proximos",
+    "kind": "checkbox",
+    "label": "Também me sinto confortável em receber amigos próximos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-limitar-as-visitas-a-no-maximo-matern-inline-004-minutos",
+    "kind": "checkbox",
+    "label": "Prefiro limitar as visitas a no máximo MATERN_INLINE_004 minutos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-me-importo-com-o-tempo-de-permanencia-das-visitas-desde-que-",
+    "kind": "checkbox",
+    "label": "Não me importo com o tempo de permanência das visitas, desde que combinado.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-03",
+    "kind": "choice-one",
+    "label": "Quero que todas as visitas sejam combinadas previamente.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-03",
+    "kind": "choice-one",
+    "label": "Não me importo com visitas surpresa.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-04",
+    "kind": "choice-one",
+    "label": "Prefiro poucas visitas por dia.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-04",
+    "kind": "choice-one",
+    "label": "Não me incomodo em receber várias pessoas no mesmo dia.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-05",
+    "kind": "choice-one",
+    "label": "Prefiro privacidade no momento da mamada e do sono do bebê, mesmo durante a visita.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-05",
+    "kind": "choice-one",
+    "label": "Não me importo que a rotina seja interrompida durante uma visita.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-permitiremos-beijos-no-bebe",
+    "kind": "checkbox",
+    "label": "Não permitiremos beijos no bebê.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.permitiremos-beijos-apenas-dos-nossos-pais",
+    "kind": "checkbox",
+    "label": "Permitiremos beijos apenas dos nossos pais.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.pediremos-que-todos-higienizem-as-maos-antes-de-pegar-o-bebe",
+    "kind": "checkbox",
+    "label": "Pediremos que todos higienizem as mãos antes de pegar o bebê.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.pediremos-o-uso-de-mascara-e-caso-alguem-esteja-com-sintomas-res",
+    "kind": "checkbox",
+    "label": "Pediremos o uso de máscara e, caso alguém esteja com sintomas respiratórios, para que não façam a visita.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-06",
+    "kind": "choice-one",
+    "label": "Só queremos que peguem o bebê quando nós oferecermos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-06",
+    "kind": "choice-one",
+    "label": "Não nos importamos que peçam para segurá-lo.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-07",
+    "kind": "choice-one",
+    "label": "Se o bebê estiver dormindo ou mamando, preferimos não interromper.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-01"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.choice.group-07",
+    "kind": "choice-one",
+    "label": "Não nos incomodamos em interromper a rotina quando necessário.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "option-02"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-queremos-fotos-do-bebe-nas-redes-sociais",
+    "kind": "checkbox",
+    "label": "Não queremos fotos do bebê nas redes sociais.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.queremos-aprovar-qualquer-publicacao-antes",
+    "kind": "checkbox",
+    "label": "Queremos aprovar qualquer publicação antes.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-nos-importamos-que-familiares-publiquem-fotos",
+    "kind": "checkbox",
+    "label": "Não nos importamos que familiares publiquem fotos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.preferimos-que-as-fotos-fiquem-apenas-entre-a-familia",
+    "kind": "checkbox",
+    "label": "Preferimos que as fotos fiquem apenas entre a família.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.gostamos-de-ouvir-sugestoes-quando-as-pedirmos",
+    "kind": "checkbox",
+    "label": "Gostamos de ouvir sugestões quando as pedirmos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.preferimos-nao-receber-conselhos-sem-solicitacao",
+    "kind": "checkbox",
+    "label": "Preferimos não receber conselhos sem solicitação.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-queremos-comparacoes-com-outros-bebes",
+    "kind": "checkbox",
+    "label": "Não queremos comparações com outros bebês.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.esperamos-que-nossas-decisoes-sejam-respeitadas-mesmo-quando-for",
+    "kind": "checkbox",
+    "label": "Esperamos que nossas decisões sejam respeitadas, mesmo quando forem diferentes das dos outros.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.nao-queremos-insistencia-quando-dissermos-nao",
+    "kind": "checkbox",
+    "label": "Não queremos insistência quando dissermos \"não\".",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-ajuda-pratica-em-vez-de-visitas-longas",
+    "kind": "checkbox",
+    "label": "Prefiro ajuda prática em vez de visitas longas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-ajuda-com-a-casa-ou-comida-do-que-com-o-bebe",
+    "kind": "checkbox",
+    "label": "Prefiro ajuda com a casa ou comida do que com o bebê.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-ajuda-com-o-bebe-para-eu-fazer-as-coisas-da-casa-como-go",
+    "kind": "checkbox",
+    "label": "Prefiro ajuda com o bebê para eu fazer as coisas da casa como gosto.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-que-me-perguntem-como-podem-ajudar-em-vez-de-assumir-o-q",
+    "kind": "checkbox",
+    "label": "Prefiro que me perguntem como podem ajudar, em vez de assumir o que preciso.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.prefiro-que-facam-o-que-acharem-necessario-sem-precisar-me-pergu",
+    "kind": "checkbox",
+    "label": "Prefiro que façam o que acharem necessário sem precisar me perguntar toda vez.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.se-eu-precisar-descansar-posso-contar-com-essas-pessoas-para-fic",
+    "kind": "checkbox",
+    "label": "Se eu precisar descansar, posso contar com essas pessoas para ficarem com o bebê: MATERN_INLINE_005",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-preservar-momentos-so-nossos-nos-primeiros-dias",
+    "kind": "checkbox",
+    "label": "Quero preservar momentos só nossos nos primeiros dias.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-estar-rodeada-das-principais-pessoas-da-minha-vida-nos-pri",
+    "kind": "checkbox",
+    "label": "Quero estar rodeada das principais pessoas da minha vida nos primeiros dias.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-ter-liberdade-para-cancelar-visitas-se-nao-estiver-bem",
+    "kind": "checkbox",
+    "label": "Quero ter liberdade para cancelar visitas se não estiver bem.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-me-sentir-a-vontade-para-dizer-hoje-nao",
+    "kind": "checkbox",
+    "label": "Quero me sentir à vontade para dizer \"hoje não\".",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.quero-que-respeitem-nosso-tempo-de-adaptacao",
+    "kind": "checkbox",
+    "label": "Quero que respeitem nosso tempo de adaptação.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.faxineira",
+    "kind": "checkbox",
+    "label": "Faxineira",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.baba",
+    "kind": "checkbox",
+    "label": "Babá",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.marmitas-prontas-ou-congeladas",
+    "kind": "checkbox",
+    "label": "Marmitas prontas ou congeladas",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.entrega-de-refeicoes",
+    "kind": "checkbox",
+    "label": "Entrega de refeições",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.cuidados-com-os-pets",
+    "kind": "checkbox",
+    "label": "Cuidados com os pets",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.outro-matern-inline-006",
+    "kind": "checkbox",
+    "label": "Outro: MATERN_INLINE_006",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.acessar-a-planilha-exclusiva-do-enxoval-separada",
+    "kind": "checkbox",
+    "label": "Acessar a planilha exclusiva do enxoval, separada.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.definir-um-orcamento",
+    "kind": "checkbox",
+    "label": "Definir um orçamento.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.reservar-um-momento-para-montar-o-enxoval",
+    "kind": "checkbox",
+    "label": "Reservar um momento para montar o enxoval.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.definimos-onde-o-bebe-vai-dormir-nos-primeiros-meses",
+    "kind": "checkbox",
+    "label": "Definimos onde o bebê vai dormir nos primeiros meses.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.o-local-de-troca-de-fraldas-esta-organizado",
+    "kind": "checkbox",
+    "label": "O local de troca de fraldas está organizado.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.os-itens-mais-usados-ficarao-ao-alcance-das-maos",
+    "kind": "checkbox",
+    "label": "Os itens mais usados ficarão ao alcance das mãos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.a-iluminacao-noturna-esta-adequada",
+    "kind": "checkbox",
+    "label": "A iluminação noturna está adequada.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.ja-pensamos-em-um-local-confortavel-para-as-mamadas",
+    "kind": "checkbox",
+    "label": "Já pensamos em um local confortável para as mamadas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.a-casa-esta-organizada-o-suficiente-para-os-primeiros-dias",
+    "kind": "checkbox",
+    "label": "A casa está organizada o suficiente para os primeiros dias.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.as-roupas-do-bebe-ja-foram-lavadas-e-organizadas",
+    "kind": "checkbox",
+    "label": "As roupas do bebê já foram lavadas e organizadas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.os-principais-itens-de-higiene-ja-estao-disponiveis",
+    "kind": "checkbox",
+    "label": "Os principais itens de higiene já estão disponíveis.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.os-documentos-importantes-estao-separados",
+    "kind": "checkbox",
+    "label": "Os documentos importantes estão separados.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.temos-refeicoes-congeladas-para-os-primeiros-dias",
+    "kind": "checkbox",
+    "label": "Temos refeições congeladas para os primeiros dias.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.a-despensa-esta-abastecida",
+    "kind": "checkbox",
+    "label": "A despensa está abastecida.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.ja-pensamos-em-lanches-rapidos-e-faceis",
+    "kind": "checkbox",
+    "label": "Já pensamos em lanches rápidos e fáceis.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.temos-uma-garrafa-de-agua-ou-copo-sempre-por-perto-para-facilita",
+    "kind": "checkbox",
+    "label": "Temos uma garrafa de água ou copo sempre por perto para facilitar a hidratação durante as mamadas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.tenho-minhas-receitas-e-medicamentos-de-uso-continuo-organizados",
+    "kind": "checkbox",
+    "label": "Tenho minhas receitas e medicamentos de uso contínuo organizados.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.sei-qual-farmacia-poderei-utilizar-caso-precise-de-algo",
+    "kind": "checkbox",
+    "label": "Sei qual farmácia poderei utilizar caso precise de algo.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.ja-conversei-com-meu-obstetra-e-pediatra-sobre-quais-itens-vale-",
+    "kind": "checkbox",
+    "label": "Já conversei com meu obstetra e pediatra sobre quais itens vale a pena ter em casa.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.ja-definimos-quem-podera-buscar-medicamentos-se-necessario",
+    "kind": "checkbox",
+    "label": "Já definimos quem poderá buscar medicamentos, se necessário.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.fraldas",
+    "kind": "checkbox",
+    "label": "Fraldas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.algodao-ou-lencos-umedecidos",
+    "kind": "checkbox",
+    "label": "Algodão ou lenços umedecidos.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.produtos-de-higiene",
+    "kind": "checkbox",
+    "label": "Produtos de higiene.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.papel-higienico",
+    "kind": "checkbox",
+    "label": "Papel higiênico.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.produtos-de-limpeza",
+    "kind": "checkbox",
+    "label": "Produtos de limpeza.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.sabao-para-lavar-roupas",
+    "kind": "checkbox",
+    "label": "Sabão para lavar roupas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.alimentos-basicos-para-a-casa",
+    "kind": "checkbox",
+    "label": "Alimentos básicos para a casa.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.racao-dos-animais-se-houver",
+    "kind": "checkbox",
+    "label": "Ração dos animais (se houver).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.gas-de-cozinha-se-aplicavel",
+    "kind": "checkbox",
+    "label": "Gás de cozinha (se aplicável).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.providenciei-itens-de-higiene",
+    "kind": "checkbox",
+    "label": "Providenciei itens de higiene.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.providenciei-itens-necessarios-para-o-sono",
+    "kind": "checkbox",
+    "label": "Providenciei itens necessários para o sono.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.separei-roupas-suficientes-para-o-periodo",
+    "kind": "checkbox",
+    "label": "Separei roupas suficientes para o período.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.organizei-fraldas-lencos-umedecidos-e-pomadas-para-todo-o-period",
+    "kind": "checkbox",
+    "label": "Organizei fraldas, lenços umedecidos e pomadas para todo o período.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.levei-medicamentos-de-uso-habitual-se-necessario",
+    "kind": "checkbox",
+    "label": "Levei medicamentos de uso habitual, se necessário.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.levei-objetos-de-conforto-naninha-chupeta-brinquedo-ou-livrinho-",
+    "kind": "checkbox",
+    "label": "Levei objetos de conforto (naninha, chupeta, brinquedo ou livrinho preferido).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.compartilhei-a-rotina-do-bebe-sono-alimentacao-medicamentos-e-ou",
+    "kind": "checkbox",
+    "label": "Compartilhei a rotina do bebê (sono, alimentação, medicamentos e outras orientações importantes).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.estudei-sobre-meus-direitos-para-o-parto-humanizado-independente",
+    "kind": "checkbox",
+    "label": "Estudei sobre meus direitos para o parto humanizado, independentemente da via de parto escolhida.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.estudei-sobre-amamentacao",
+    "kind": "checkbox",
+    "label": "Estudei sobre amamentação.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.identifiquei-o-banco-de-leite-e-ou-consultora-de-amamentacao",
+    "kind": "checkbox",
+    "label": "Identifiquei o banco de leite e/ou consultora de amamentação.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.estudei-sobre-sono-do-recem-nascido",
+    "kind": "checkbox",
+    "label": "Estudei sobre sono do recém-nascido.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.li-a-caderneta-da-crianca",
+    "kind": "checkbox",
+    "label": "Li a Caderneta da Criança.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.encomendei-minha-caderneta-da-crianca-personalizada-opcional",
+    "kind": "checkbox",
+    "label": "Encomendei minha caderneta da criança personalizada (opcional).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.preparei-minha-ausencia-do-trabalho-quando-aplicavel",
+    "kind": "checkbox",
+    "label": "Preparei minha ausência do trabalho (quando aplicável).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.escolhemos-a-maternidade",
+    "kind": "checkbox",
+    "label": "Escolhemos a maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.conhecemos-o-caminho-da-maternidade",
+    "kind": "checkbox",
+    "label": "Conhecemos o caminho da maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.visitamos-a-maternidade",
+    "kind": "checkbox",
+    "label": "Visitamos a maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.conhecemos-as-regras-da-maternidade-visitas-acompanhante-doula-f",
+    "kind": "checkbox",
+    "label": "Conhecemos as regras da maternidade (visitas, acompanhante, doula, fotógrafa, etc.).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.o-bebe-conforto-ja-esta-instalado-no-carro",
+    "kind": "checkbox",
+    "label": "O bebê-conforto já está instalado no carro.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.a-mala-maternidade-esta-pronta",
+    "kind": "checkbox",
+    "label": "A mala maternidade está pronta.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.definimos-quem-ficara-responsavel-por-avisar-a-familia",
+    "kind": "checkbox",
+    "label": "Definimos quem ficará responsável por avisar a família.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.documento-de-identificacao",
+    "kind": "checkbox",
+    "label": "Documento de identificação.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.cartao-do-plano-de-saude-se-houver",
+    "kind": "checkbox",
+    "label": "Cartão do plano de saúde (se houver).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.cartao-da-gestante",
+    "kind": "checkbox",
+    "label": "Cartão da gestante.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.exames-importantes",
+    "kind": "checkbox",
+    "label": "Exames importantes.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.outros-documentos-solicitados-pela-maternidade",
+    "kind": "checkbox",
+    "label": "Outros documentos solicitados pela maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.declaracao-de-nascido-vivo-dnv-para-emissao-da-certidao-de-nasci",
+    "kind": "checkbox",
+    "label": "Declaração de Nascido Vivo (DNV) para emissão da Certidão de Nascimento.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.certidao-de-nascimento-feita-no-cartorio",
+    "kind": "checkbox",
+    "label": "Certidão de nascimento (feita no cartório).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.inclusao-do-bebe-no-plano-de-saude-se-houver-atencao-para-o-praz",
+    "kind": "checkbox",
+    "label": "Inclusão do bebê no plano de saúde (se houver) - atenção para o prazo de 30 dias.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.atestado-ou-documento-medico-necessario-para-solicitar-o-salario",
+    "kind": "checkbox",
+    "label": "Atestado ou documento médico necessário para solicitar o salário-maternidade/licença, conforme seu vínculo.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.solicitacao-da-licenca-maternidade-ou-do-salario-maternidade",
+    "kind": "checkbox",
+    "label": "Solicitação da licença-maternidade ou do salário-maternidade.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.solicitacao-da-licenca-paternidade-quando-aplicavel",
+    "kind": "checkbox",
+    "label": "Solicitação da licença-paternidade (quando aplicável).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.outros-documentos-ou-cadastros-importantes",
+    "kind": "checkbox",
+    "label": "Outros documentos ou cadastros importantes.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.vacinas-do-recem-nascido",
+    "kind": "checkbox",
+    "label": "Vacinas do recém-nascido.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.hepatite-b",
+    "kind": "checkbox",
+    "label": "Hepatite B.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.bcg",
+    "kind": "checkbox",
+    "label": "BCG.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.teste-do-coracaozinho",
+    "kind": "checkbox",
+    "label": "Teste do coraçãozinho.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.teste-do-pezinho",
+    "kind": "checkbox",
+    "label": "Teste do pezinho.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.teste-da-orelhinha",
+    "kind": "checkbox",
+    "label": "Teste da orelhinha.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.teste-do-olhinho",
+    "kind": "checkbox",
+    "label": "Teste do olhinho.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.teste-da-linguinha-quando-indicado-ou-disponivel",
+    "kind": "checkbox",
+    "label": "Teste da linguinha (quando indicado ou disponível).",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.primeira-consulta-com-o-pediatra",
+    "kind": "checkbox",
+    "label": "Primeira consulta com o pediatra.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.consulta-de-revisao-pos-parto",
+    "kind": "checkbox",
+    "label": "Consulta de revisão pós-parto.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.checklist.agenda-das-primeiras-semanas",
+    "kind": "checkbox",
+    "label": "Agenda das primeiras semanas.",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": "Yes"
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.assinatura",
+    "kind": "signature",
+    "label": "Assinatura",
+    "maxlength": 120,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.data",
+    "kind": "date",
+    "label": "Data",
+    "maxlength": 10,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.como-eu-costumo-reagir-ao-estresse",
+    "kind": "textarea",
+    "label": "Como eu costumo reagir ao estresse?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.o-que-costuma-me-sobrecarregar",
+    "kind": "textarea",
+    "label": "O que costuma me sobrecarregar?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.o-que-eu-gosto-de-fazer-para-me-sentir-melhor",
+    "kind": "textarea",
+    "label": "O que eu gosto de fazer para me sentir melhor?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.como-imagino-os-primeiros-dias-apos-o-nascimento",
+    "kind": "textarea",
+    "label": "Como imagino os primeiros dias após o nascimento?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.em-quais-situacoes-acho-que-vou-precisar-de-mais-ajuda",
+    "kind": "textarea",
+    "label": "Em quais situações acho que vou precisar de mais ajuda?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-6",
+    "kind": "textarea",
+    "label": "Área de resposta 6",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-7",
+    "kind": "textarea",
+    "label": "Área de resposta 7",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-8",
+    "kind": "textarea",
+    "label": "Área de resposta 8",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-9",
+    "kind": "textarea",
+    "label": "Área de resposta 9",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.se-a-espiritualidade-faz-parte-da-sua-vida-como-voce-pretende-cu",
+    "kind": "textarea",
+    "label": "Se a espiritualidade faz parte da sua vida, como você pretende cultivá-la durante o puerpério?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.quando-e-o-melhor-momento-para-conversar",
+    "kind": "textarea",
+    "label": "Quando é o melhor momento para conversar?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.como-eu-espero-me-sentir-depois-dessa-conversa-e-o-que-eu-quero-",
+    "kind": "textarea",
+    "label": "Como eu espero me sentir depois dessa conversa e o que eu quero que mude?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.avisar-antes-que-eu-quero-conversar-ajudaria",
+    "kind": "textarea",
+    "label": "Avisar antes que eu quero conversar ajudaria?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.o-que-posso-fazer-para-facilitar-essa-conversa",
+    "kind": "textarea",
+    "label": "O que posso fazer para facilitar essa conversa?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.eu-estou-aberta-a-ouvir-o-outro-lado-mesmo-que-seja-diferente-do",
+    "kind": "textarea",
+    "label": "Eu estou aberta a ouvir o outro lado, mesmo que seja diferente do meu?",
+    "maxlength": 360,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.outro",
+    "kind": "text",
+    "label": "[ ] Outro",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.prefiro-limitar-as-visitas-a-no-maximo",
+    "kind": "text",
+    "label": "[ ] Prefiro limitar as visitas a no máximo",
+    "maxlength": 4,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-16",
+    "kind": "textarea",
+    "label": "Área de resposta 16",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-17",
+    "kind": "textarea",
+    "label": "Área de resposta 17",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.pessoas-que-podem-ficar-com-o-bebe",
+    "kind": "text",
+    "label": "Pessoas que podem ficar com o bebê",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-18",
+    "kind": "textarea",
+    "label": "Área de resposta 18",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.outro-02",
+    "kind": "text",
+    "label": "[ ] Outro",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-19",
+    "kind": "textarea",
+    "label": "Área de resposta 19",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-20",
+    "kind": "textarea",
+    "label": "Área de resposta 20",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-21",
+    "kind": "textarea",
+    "label": "Área de resposta 21",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-22",
+    "kind": "textarea",
+    "label": "Área de resposta 22",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.area-de-resposta-23",
+    "kind": "textarea",
+    "label": "Área de resposta 23",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.maternidade",
+    "kind": "tel",
+    "label": "Maternidade",
+    "maxlength": 30,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.obstetra",
+    "kind": "tel",
+    "label": "Obstetra",
+    "maxlength": 30,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.pediatra",
+    "kind": "tel",
+    "label": "Pediatra",
+    "maxlength": 30,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.outro-03",
+    "kind": "text",
+    "label": "Outro",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.data-02",
+    "kind": "date",
+    "label": "Data",
+    "maxlength": 10,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.response.hoje-eu-me-sinto",
+    "kind": "textarea",
+    "label": "Hoje eu me sinto:",
+    "maxlength": 420,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-01.column-01",
+    "kind": "text",
+    "label": "Pessoa - linha 1",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-01.column-02",
+    "kind": "textarea",
+    "label": "Como pode ajudar? - linha 1",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-01.column-03",
+    "kind": "text",
+    "label": "Com que frequência? - linha 1",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-01.column-04",
+    "kind": "checkbox",
+    "label": "Já conversei? - linha 1",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-02.column-01",
+    "kind": "text",
+    "label": "Pessoa - linha 2",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-02.column-02",
+    "kind": "textarea",
+    "label": "Como pode ajudar? - linha 2",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-02.column-03",
+    "kind": "text",
+    "label": "Com que frequência? - linha 2",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-02.column-04",
+    "kind": "checkbox",
+    "label": "Já conversei? - linha 2",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-03.column-01",
+    "kind": "text",
+    "label": "Pessoa - linha 3",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-03.column-02",
+    "kind": "textarea",
+    "label": "Como pode ajudar? - linha 3",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-03.column-03",
+    "kind": "text",
+    "label": "Com que frequência? - linha 3",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-03.column-04",
+    "kind": "checkbox",
+    "label": "Já conversei? - linha 3",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-04.column-01",
+    "kind": "text",
+    "label": "Pessoa - linha 4",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-04.column-02",
+    "kind": "textarea",
+    "label": "Como pode ajudar? - linha 4",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-04.column-03",
+    "kind": "text",
+    "label": "Com que frequência? - linha 4",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-04.column-04",
+    "kind": "checkbox",
+    "label": "Já conversei? - linha 4",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-05.column-01",
+    "kind": "text",
+    "label": "Pessoa - linha 5",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-05.column-02",
+    "kind": "textarea",
+    "label": "Como pode ajudar? - linha 5",
+    "maxlength": 160,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-05.column-03",
+    "kind": "text",
+    "label": "Com que frequência? - linha 5",
+    "maxlength": 80,
+    "widgets": 1,
+    "export_value": null
+  },
+  {
+    "name": "maternologia.100-dias-sem-caos.passo-a-passo.support-network.row-05.column-04",
+    "kind": "checkbox",
+    "label": "Já conversei? - linha 5",
+    "maxlength": null,
+    "widgets": 1,
+    "export_value": null
+  }
+]

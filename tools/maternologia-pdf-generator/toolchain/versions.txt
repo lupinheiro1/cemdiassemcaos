@@ -1,0 +1,8 @@
+python=3.13.14
+uv=0.11.31
+weasyprint=69.0
+poppler=26.02.0
+qpdf=12.3.2
+java=Temurin JRE 21.0.12+8
+verapdf=1.30.2
+

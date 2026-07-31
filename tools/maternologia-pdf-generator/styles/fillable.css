@@ -1,0 +1,9 @@
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #a65f3f;
+}
+
+label {
+  cursor: pointer;
+}
+
