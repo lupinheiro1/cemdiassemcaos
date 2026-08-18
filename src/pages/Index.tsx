@@ -1,13 +1,14 @@
 import { HeroSection } from "@/components/sections/HeroSection";
+import { DiscoverSection } from "@/components/sections/DiscoverSection";
 import { TargetAudienceSection } from "@/components/sections/TargetAudienceSection";
 import { HighlightSection } from "@/components/sections/HighlightSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { CTABannerSection } from "@/components/sections/CTABannerSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TransformationSection } from "@/components/sections/TransformationSection";
 import { OfferSection } from "@/components/sections/OfferSection";
+import { ReinforceSection } from "@/components/sections/ReinforceSection";
 import { ObjectionsSection } from "@/components/sections/ObjectionsSection";
 import { ComparisonSection } from "@/components/sections/ComparisonSection";
 import { AuthorSection } from "@/components/sections/AuthorSection";
@@ -19,13 +20,13 @@ const Index = () => {
     <main className="min-h-screen">
       <HeroSection />
 
+      <DiscoverSection />
+
       <TargetAudienceSection />
 
       <HighlightSection />
 
       <HowItWorksSection />
-
-      <BenefitsSection />
 
       <StatsSection />
 
@@ -36,6 +37,8 @@ const Index = () => {
       <TransformationSection />
 
       <OfferSection />
+
+      <ReinforceSection />
 
       <ObjectionsSection />
 
