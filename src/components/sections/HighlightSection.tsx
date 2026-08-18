@@ -17,9 +17,9 @@
  *           tinha, renderiza visivelmente maior (x-height mais alto); reduzido um degrau
  *           (text-2xl→text-xl etc). O coração ficou grande demais depois desse ajuste —
  *           reduzido de w-12/h-12 pra w-8/h-8. Parágrafos de corpo (intro e a frase antes
- *           da nota) e a nota em si continuavam parecendo maiores que o corpo normal do
- *           site mesmo depois de trazidos pra text-base — reduzidos mais um degrau
- *           (text-sm/text-xs) pra garantir a diferença visual pedida.
+ *           da nota): tentativa de reduzir pra text-sm ficou pequena demais — voltaram pra
+ *           text-base (igual ao corpo normal do site). Só a nota "Por isso, organizamos..."
+ *           deve ficar menor que o resto — mantida em text-xs, pedido explícito da Luiza.
  */
 import { Heart } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -32,7 +32,7 @@ export const HighlightSection = () => {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-6">
             Pensado de mãe para mãe
           </h2>
-          <p className="text-sm text-muted-foreground mb-6">
+          <p className="text-base text-muted-foreground mb-6">
             O maior erro da maioria dos cursos de maternidade é focar apenas no
             bebê que já está nos seus braços. Porém, eles esquecem de uma verdade
             simples.
@@ -50,7 +50,7 @@ export const HighlightSection = () => {
             </p>
           </div>
 
-          <p className="text-sm text-muted-foreground mb-10">
+          <p className="text-base text-muted-foreground mb-10">
             E para você conseguir curtir 100% o seu filho, os cuidados precisam ir
             muito além dele.
           </p>
