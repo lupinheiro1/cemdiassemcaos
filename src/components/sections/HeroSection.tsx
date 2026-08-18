@@ -1,11 +1,27 @@
 /**
  * @file HeroSection.tsx
- * @description Seção principal da landing page.
+ * @modified 2026-08-17
+ * @authors Luiza Machado + Claude Sonnet 5
+ * @reason Reforma da página de vendas (protótipo aprovado em design/, 15 rodadas de
+ *         ajuste): a oferta virou um app, não mais um e-book/guia em PDF. O hero antigo
+ *         prometia "um guia" e trazia os 6 itens de "você vai descobrir" competindo por
+ *         espaço com a promessa do produto na mesma dobra.
+ * @objective Hero focado numa coisa só: validar a dor (a lista de 50 tarefas) e prometer
+ *            a solução (um app com passo a passo), com uma screenshot real do app pra dar
+ *            prova visual imediata. Os 6 itens de "você vai descobrir" saíram pra uma
+ *            seção própria (ver DiscoverSection.tsx), sem concorrer com essa promessa.
+ * @solution Estrutura em 2 colunas (texto + celular) a partir do protótipo HTML aprovado;
+ *           logo real (mesmo arquivo de antes) em tamanho reduzido no topo, como no
+ *           protótipo, em vez do logo grande que ocupava a dobra inteira. Screenshot real
+ *           (src/assets/app-home.webp) dentro de PhoneMockup, no lugar da recriação de UI
+ *           em CSS que o protótipo usava (não temos mais só uma direção visual — temos a
+ *           tela real do app cemdias-app).
  */
-
-import { Check, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import logoMaternologia from "@/assets/logo-maternologia.svg";
+import appHome from "@/assets/app-home.webp";
 import { CTAButton } from "@/components/ui/cta-button";
+import { PhoneMockup } from "@/components/ui/phone-mockup";
 
 export const HeroSection = () => {
   return (
@@ -17,94 +33,61 @@ export const HeroSection = () => {
       <div className="hidden md:block absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
 
       <div className="container relative z-10 px-4 pt-2 pb-10 md:pt-4 md:pb-14">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-1">
-            <img
-              src={logoMaternologia}
-              alt="Maternologia - 100 Dias Sem Caos"
-              width="360"
-              height="144"
-              decoding="async"
-              className="h-24 md:h-36 w-auto mx-auto"
-            />
+        <div className="flex items-center justify-center gap-2 mb-8">
+          <img
+            src={logoMaternologia}
+            alt="Maternologia"
+            width="120"
+            height="48"
+            decoding="async"
+            className="h-7 w-auto"
+          />
+        </div>
+
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-6">
+              <Heart className="w-4 h-4 text-primary shrink-0" />
+              <span className="text-sm font-medium text-muted-foreground">
+                Passo a passo para a gravidez inteira, direto no seu celular
+              </span>
+            </div>
+
+            <h1 className="font-sans text-3xl md:text-4xl lg:text-[42px] font-extrabold text-foreground leading-[1.15] mb-5 tracking-tight">
+              Uma lista de 50 coisas pra resolver antes do bebê nascer.
+              <br />
+              Por onde você <span className="text-[hsl(18_70%_48%)]">começa?</span>
+            </h1>
+
+            <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-7">
+              <strong className="font-semibold text-foreground">O 100 Dias Sem Caos</strong>{" "}
+              pega essa lista gigante e transforma num{" "}
+              <strong className="font-semibold text-foreground">
+                passo a passo, na ordem certa
+              </strong>
+              , pra você saber exatamente o que fazer em cada etapa sem se perder ou deduzir
+              tudo sozinha. Tudo isso com poucos cliques.
+            </p>
+
+            <div className="flex flex-col items-center lg:items-start gap-2.5">
+              <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+              <span className="text-sm text-muted-foreground">
+                ✨ Acesso imediato, direto no seu celular
+              </span>
+            </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-8">
-            <Heart className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">
-              Guia prático para o início da maternidade
-            </span>
-          </div>
+          <div className="relative flex justify-center">
+            <PhoneMockup src={appHome} alt="Tela inicial do app 100 Dias Sem Caos" />
 
-          <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.08] mb-6 tracking-tight">
-            Todo mundo ensina a preparar o bebê.
-            <br />
-            Mas quem ensina a preparar a{" "}
-            <span className="text-[hsl(18_70%_48%)]">mãe?</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Se você está grávida e quer viver o início da maternidade com mais{" "}
-            <strong className="font-semibold text-foreground">
-              segurança, leveza e direção
-            </strong>
-            , leia esta página com atenção.
-          </p>
-
-          <div className="mt-6 mb-6">
-            <span className="inline bg-[hsl(18_70%_48%)] px-3 py-1 text-lg md:text-xl font-bold leading-relaxed text-white box-decoration-clone">
-              Você vai descobrir:
-            </span>
-          </div>
-
-          <ul className="max-w-3xl mx-auto space-y-5 text-left text-lg md:text-xl text-muted-foreground leading-relaxed">
-            <li className="flex items-start gap-3">
-              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
-              <span>
-                <strong className="font-semibold text-foreground">
-                  O que realmente precisa ser preparado antes do bebê nascer
-                </strong>{" "}
-                (e quase ninguém ensina).
-              </span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
-              <span>
-                Como tomar decisões com mais confiança, lidar com os palpites e{" "}
-                <strong className="font-semibold text-foreground">
-                  preservar seus relacionamentos
-                </strong>{" "}
-                nesse período de tantas mudanças.
-              </span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
-              <span>
-                Como ter a tranquilidade de saber que{" "}
-                <strong className="font-semibold text-foreground">
-                  você está fazendo o melhor para o seu bebê
-                </strong>
-                , mesmo em meio a tantas opiniões e informações conflitantes.
-              </span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <Check className="mt-1 h-5 w-5 shrink-0 text-[hsl(18_70%_48%)]" strokeWidth={3} />
-              <span>
-                Quais são os principais pontos de atenção sobre{" "}
-                <strong className="font-semibold text-foreground">
-                  saúde mental, amamentação e sono
-                </strong>
-                , reunidos em um único lugar para que você não precise enfrentar
-                essa fase sozinha.
-              </span>
-            </li>
-          </ul>
-
-          <div className="mt-8">
-            <CTAButton>Quero Viver Meus 100 Dias Sem Caos</CTAButton>
+            <div className="hidden lg:flex absolute top-[6%] -left-6 items-center gap-2 bg-card rounded-2xl px-3.5 py-2.5 shadow-lg text-sm font-semibold text-foreground">
+              <span className="w-2 h-2 rounded-full bg-sage shrink-0" />
+              Progresso sempre salvo
+            </div>
+            <div className="hidden lg:flex absolute bottom-[10%] -right-6 items-center gap-2 bg-card rounded-2xl px-3.5 py-2.5 shadow-lg text-sm font-semibold text-foreground">
+              <span className="w-2 h-2 rounded-full bg-sage shrink-0" />
+              Guia completo dentro do app
+            </div>
           </div>
         </div>
       </div>
