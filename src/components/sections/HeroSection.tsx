@@ -13,11 +13,11 @@
  * @solution Estrutura em 2 colunas (texto + celular) a partir do protótipo HTML aprovado.
  *           Screenshot real (src/assets/app-home.webp) dentro de PhoneMockup, no lugar da
  *           recriação de UI em CSS que o protótipo usava (não temos mais só uma direção
- *           visual — temos a tela real do app cemdias-app). Testado ao vivo pela Luiza:
- *           logo real em h-7 ficou ilegível (o SVG é um selo quase quadrado, não um
- *           ícone+texto lado a lado como no protótipo) — corrigido pra h-12/h-14, ainda
- *           pequeno demais numa segunda rodada de teste, aumentado de novo pra h-16/h-20.
- *           Padding
+ *           visual — temos a tela real do app cemdias-app). Testado ao vivo pela Luiza, em
+ *           3 rodadas sucessivas: logo real em h-7 ficou ilegível (o SVG é um selo quase
+ *           quadrado, não um ícone+texto lado a lado como no protótipo) — h-12/h-14 ainda
+ *           pequeno, h-16/h-20 ainda pequeno; pedido explícito de "aumente 1,5x" a partir
+ *           daí, chegando em h-24/h-[120px]. Padding
  *           lateral reforçado e max-width do grid reduzido de 6xl pra 5xl (conteúdo colado
  *           na borda em telas largas). H1 padronizado pra text-4xl md:text-5xl — mesma
  *           escala usada nos h2 do resto da página, um degrau acima, pra manter hierarquia
@@ -46,7 +46,7 @@ export const HeroSection = () => {
             width="120"
             height="48"
             decoding="async"
-            className="h-16 md:h-20 w-auto"
+            className="h-24 md:h-[120px] w-auto"
           />
         </div>
 
