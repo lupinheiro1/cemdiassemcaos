@@ -15,7 +15,9 @@
  *           recriação de UI em CSS que o protótipo usava (não temos mais só uma direção
  *           visual — temos a tela real do app cemdias-app). Testado ao vivo pela Luiza:
  *           logo real em h-7 ficou ilegível (o SVG é um selo quase quadrado, não um
- *           ícone+texto lado a lado como no protótipo) — corrigido pra h-12/h-14. Padding
+ *           ícone+texto lado a lado como no protótipo) — corrigido pra h-12/h-14, ainda
+ *           pequeno demais numa segunda rodada de teste, aumentado de novo pra h-16/h-20.
+ *           Padding
  *           lateral reforçado e max-width do grid reduzido de 6xl pra 5xl (conteúdo colado
  *           na borda em telas largas). H1 padronizado pra text-4xl md:text-5xl — mesma
  *           escala usada nos h2 do resto da página, um degrau acima, pra manter hierarquia
@@ -44,7 +46,7 @@ export const HeroSection = () => {
             width="120"
             height="48"
             decoding="async"
-            className="h-12 md:h-14 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </div>
 

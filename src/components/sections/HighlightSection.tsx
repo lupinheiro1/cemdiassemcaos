@@ -12,6 +12,12 @@
  *            serifa do título e das frases de destaque.
  * @solution "cuida... que acabou de nascer" → "vai cuidar... desde o primeiro segundo de
  *           vida". Nota final reescrita conforme a copy aprovada. font-serif → font-sans.
+ *           Testado ao vivo pela Luiza: o card de destaque ficou "enorme" — o Inter em
+ *           negrito, no mesmo tamanho em px que a Playfair Display tinha, renderiza
+ *           visivelmente maior (x-height mais alto); reduzido um degrau (text-2xl→text-xl
+ *           etc). Parágrafos de corpo (intro e a frase antes da nota) também estavam acima
+ *           do padrão do resto do site (text-lg/xl em vez do text-base sem seções como
+ *           ObjectionsSection/TargetAudienceSection usam) — trazidos pro mesmo tamanho.
  */
 import { Heart } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -24,7 +30,7 @@ export const HighlightSection = () => {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-6">
             Pensado de mãe para mãe
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-6">
+          <p className="text-base text-muted-foreground mb-6">
             O maior erro da maioria dos cursos de maternidade é focar apenas no
             bebê que já está nos seus braços. Porém, eles esquecem de uma verdade
             simples.
@@ -32,17 +38,17 @@ export const HighlightSection = () => {
 
           <div className="bg-card rounded-2xl shadow-xl p-8 md:p-12 mb-8">
             <Heart className="w-12 h-12 text-primary mx-auto mb-6 animate-pulse-soft" />
-            <p className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-snug">
+            <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-snug">
               Existe alguém que vai cuidar{" "}
               <span className="text-primary">24 horas por dia</span> desse bebê,
               desde o primeiro segundo de vida.
             </p>
-            <p className="font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-primary mt-2">
+            <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold text-primary mt-2">
               E esse alguém é você, mãe.
             </p>
           </div>
 
-          <p className="text-lg text-muted-foreground mb-10">
+          <p className="text-base text-muted-foreground mb-10">
             E para você conseguir curtir 100% o seu filho, os cuidados precisam ir
             muito além dele.
           </p>
