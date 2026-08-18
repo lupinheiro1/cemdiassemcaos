@@ -7,6 +7,14 @@
  * @reason Reduzir concorrencia de rede no first paint para beneficiar LCP.
  * @changes
  *   - Marca imagens de depoimentos como lazy para priorizar recursos acima da dobra.
+ *
+ * @modified 2026-08-17
+ * @authors Luiza Machado + Claude Sonnet 5
+ * @reason Reforma da página de vendas (protótipo aprovado em design/): revisão de
+ *         tipografia da página inteira — tirar a serifa (Playfair Display) dos títulos.
+ * @objective Conteúdo sem alterações (ver
+ *            design/100-dias-sem-caos-copy-pagina-vendas_4.md, seção 8); só a fonte muda.
+ * @solution font-serif → font-sans no h2.
  */
 import depoimentoJaria from "@/assets/depoimento-jaria.webp";
 import depoimentoSimara from "@/assets/depoimento-simara.webp";
@@ -27,7 +35,7 @@ export const TestimonialsSection = () => {
     <section className="py-16 md:py-24 bg-peach-light">
       <div className="container px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             O que outras mães estão dizendo
           </h2>
           <p className="text-center text-muted-foreground mb-12">

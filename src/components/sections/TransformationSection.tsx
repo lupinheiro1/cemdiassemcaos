@@ -1,3 +1,13 @@
+/**
+ * @file TransformationSection.tsx
+ * @modified 2026-08-17
+ * @authors Luiza Machado + Claude Sonnet 5
+ * @reason Reforma da página de vendas (protótipo aprovado em design/): revisão de
+ *         tipografia da página inteira — tirar a serifa (Playfair Display) dos títulos.
+ * @objective Conteúdo desta seção sem alterações (ver
+ *            design/100-dias-sem-caos-copy-pagina-vendas_4.md, seção 9); só a fonte muda.
+ * @solution font-serif → font-sans no h2 e nos h3 de cada coluna.
+ */
 import { X, Check } from "lucide-react";
 
 const transformations = [
@@ -32,14 +42,14 @@ export const TransformationSection = () => {
     <section className="py-16 md:py-24 bg-background">
       <div className="container px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             A transformação que você merece
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Before */}
             <div className="bg-muted-box rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-xl font-semibold text-foreground/70 mb-6 text-center">
+              <h3 className="font-sans text-xl font-semibold text-foreground/70 mb-6 text-center">
                 Sem o 100 Dias Sem Caos
               </h3>
               <div className="space-y-3">
@@ -57,7 +67,7 @@ export const TransformationSection = () => {
 
             {/* After */}
             <div className="bg-sage-light rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-xl font-semibold text-secondary-foreground mb-6 text-center">
+              <h3 className="font-sans text-xl font-semibold text-secondary-foreground mb-6 text-center">
                 Com o 100 Dias Sem Caos
               </h3>
               <div className="space-y-3">

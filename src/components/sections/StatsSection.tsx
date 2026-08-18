@@ -1,3 +1,13 @@
+/**
+ * @file StatsSection.tsx
+ * @modified 2026-08-17
+ * @authors Luiza Machado + Claude Sonnet 5
+ * @reason Reforma da página de vendas (protótipo aprovado em design/): revisão de
+ *         tipografia da página inteira — tirar a serifa (Playfair Display) dos títulos.
+ * @objective Conteúdo desta seção sem alterações (ver
+ *            design/100-dias-sem-caos-copy-pagina-vendas_4.md, seção 6); só a fonte muda.
+ * @solution font-serif → font-sans no h2 e no número de destaque de cada card.
+ */
 import { AlertCircle, Heart, Clock, Shield } from "lucide-react";
 
 const stats = [
@@ -28,7 +38,7 @@ export const StatsSection = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-lavender-light">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Por que a estrutura importa?
           </h2>
 
@@ -41,7 +51,7 @@ export const StatsSection = () => {
                 <div className="w-12 h-12 bg-rose-light rounded-full flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <p className="font-serif text-2xl font-bold text-primary mb-2">
+                <p className="font-sans text-2xl font-bold text-primary mb-2">
                   {item.stat}
                 </p>
                 <p className="text-muted-foreground">{item.description}</p>
