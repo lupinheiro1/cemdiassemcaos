@@ -1,12 +1,16 @@
 /**
  * @file cta-button.tsx
- * @modified 2026-07-14
- * @authors Marcelo Arana + Claude Sonnet 5
+ * @modified 2026-08-18
+ * @authors Luiza Machado + Claude Sonnet 5
  * @reason Botão de compra usava um href fixo, perdendo parâmetros de rastreamento
- *         (UTM/fbclid/gclid) da campanha que trouxe o visitante até a página.
+ *         (UTM/fbclid/gclid) da campanha que trouxe o visitante até a página. Depois: a
+ *         Luiza trocou o produto na Hotmart (novo ID, mesmo checkoutMode).
  * @objective Repassar esses parâmetros pro checkout do Hotmart automaticamente.
  * @solution href calculado com buildCheckoutUrl (src/lib/checkoutUrl.ts) a partir da URL
  *           atual da página — sem parâmetros na URL, o link continua idêntico ao de antes.
+ *           Depois: CHECKOUT_URL atualizada pro novo produto — buildCheckoutUrl não muda,
+ *           ela só mescla parâmetros na URL base recebida, então o rastreamento por
+ *           UTM/fbclid/gclid continua funcionando igual com o link novo.
  */
 import { cn } from "@/lib/utils";
 import { buildCheckoutUrl } from "@/lib/checkoutUrl";
@@ -16,7 +20,7 @@ interface CTAButtonProps {
   className?: string;
 }
 
-const CHECKOUT_URL = "https://pay.hotmart.com/E104054938B?checkoutMode=10";
+const CHECKOUT_URL = "https://pay.hotmart.com/D107212680M?checkoutMode=10";
 
 export const CTAButton = ({ children, className }: CTAButtonProps) => {
   return (
