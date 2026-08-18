@@ -7,6 +7,16 @@
  * @reason Evitar carga antecipada de imagem fora da dobra para melhorar LCP.
  * @changes
  *   - Define lazy/decode async/fetchpriority low na imagem da autora.
+ *
+ * @modified 2026-08-17
+ * @authors Luiza Machado + Claude Sonnet 5
+ * @reason Reforma da página de vendas (protótipo aprovado em design/): a Luiza pediu pra
+ *         cortar "(e algumas olheiras)" do título (ver
+ *         design/100-dias-sem-caos-copy-pagina-vendas_4.md, v9, item 21); revisão de
+ *         tipografia da página inteira tira a serifa dos títulos.
+ * @objective Título só "Quem criou esse conteúdo com muito amor"; resto do conteúdo sem
+ *            alterações.
+ * @solution Removido o <span> com "(e algumas olheiras)". font-serif → font-sans.
  */
 import { Heart, Star, Users } from "lucide-react";
 import luizaPhoto from "@/assets/luiza-pinheiro.webp";
@@ -16,11 +26,8 @@ export const AuthorSection = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-peach-light to-background">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Quem criou esse conteúdo com muito amor
-            <span className="block text-lg font-normal text-muted-foreground mt-2">
-              (e algumas olheiras)
-            </span>
           </h2>
 
           <div className="bg-card rounded-2xl shadow-xl overflow-hidden">
@@ -41,7 +48,7 @@ export const AuthorSection = () => {
 
               {/* Content */}
               <div className="md:w-2/3 p-8">
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
+                <h3 className="font-sans text-2xl font-bold text-foreground mb-4">
                   Luiza Pinheiro
                 </h3>
                 <p className="text-muted-foreground mb-4">
