@@ -8,13 +8,17 @@
  * @changes
  *   - Marca imagens de depoimentos como lazy para priorizar recursos acima da dobra.
  *
- * @modified 2026-08-17
+ * @modified 2026-08-18
  * @authors Luiza Machado + Claude Sonnet 5
  * @reason Reforma da página de vendas (protótipo aprovado em design/): revisão de
  *         tipografia da página inteira — tirar a serifa (Playfair Display) dos títulos.
- * @objective Conteúdo sem alterações (ver
+ *         Depois: pedido da Luiza de reordenar os depoimentos, o da Izis (antes o
+ *         último) pra 2ª posição.
+ * @objective Conteúdo sem alterações de texto (ver
  *            design/100-dias-sem-caos-copy-pagina-vendas_4.md, seção 8); só a fonte muda.
- * @solution font-serif → font-sans no h2.
+ *            Depois: nova ordem dos cards do carrossel.
+ * @solution font-serif → font-sans no h2. Depois: array `testimonials` reordenado —
+ *           Jária, Izis, Simara, Taynara, Isabela.
  */
 import depoimentoJaria from "@/assets/depoimento-jaria.webp";
 import depoimentoSimara from "@/assets/depoimento-simara.webp";
@@ -24,10 +28,10 @@ import depoimentoIzis from "@/assets/depoimento-izis.webp";
 
 const testimonials = [
   { image: depoimentoJaria, alt: "Depoimento da Jária" },
+  { image: depoimentoIzis, alt: "Depoimento da Izis" },
   { image: depoimentoSimara, alt: "Depoimento da Simara" },
   { image: depoimentoTaynara, alt: "Depoimento da Taynara" },
   { image: depoimentoIsabela, alt: "Depoimento da Isabela" },
-  { image: depoimentoIzis, alt: "Depoimento da Izis" },
 ];
 
 export const TestimonialsSection = () => {
