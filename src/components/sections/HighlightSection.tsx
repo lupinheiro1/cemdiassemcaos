@@ -56,7 +56,7 @@ export const HighlightSection = () => {
             </p>
           </div>
 
-          <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+          <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
         </div>
       </div>
     </section>

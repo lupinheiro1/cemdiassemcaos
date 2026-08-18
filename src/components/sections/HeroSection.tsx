@@ -10,12 +10,16 @@
  *            a solução (um app com passo a passo), com uma screenshot real do app pra dar
  *            prova visual imediata. Os 6 itens de "você vai descobrir" saíram pra uma
  *            seção própria (ver DiscoverSection.tsx), sem concorrer com essa promessa.
- * @solution Estrutura em 2 colunas (texto + celular) a partir do protótipo HTML aprovado;
- *           logo real (mesmo arquivo de antes) em tamanho reduzido no topo, como no
- *           protótipo, em vez do logo grande que ocupava a dobra inteira. Screenshot real
- *           (src/assets/app-home.webp) dentro de PhoneMockup, no lugar da recriação de UI
- *           em CSS que o protótipo usava (não temos mais só uma direção visual — temos a
- *           tela real do app cemdias-app).
+ * @solution Estrutura em 2 colunas (texto + celular) a partir do protótipo HTML aprovado.
+ *           Screenshot real (src/assets/app-home.webp) dentro de PhoneMockup, no lugar da
+ *           recriação de UI em CSS que o protótipo usava (não temos mais só uma direção
+ *           visual — temos a tela real do app cemdias-app). Testado ao vivo pela Luiza:
+ *           logo real em h-7 ficou ilegível (o SVG é um selo quase quadrado, não um
+ *           ícone+texto lado a lado como no protótipo) — corrigido pra h-12/h-14. Padding
+ *           lateral reforçado e max-width do grid reduzido de 6xl pra 5xl (conteúdo colado
+ *           na borda em telas largas). H1 padronizado pra text-4xl md:text-5xl — mesma
+ *           escala usada nos h2 do resto da página, um degrau acima, pra manter hierarquia
+ *           clara (estava quase do mesmo tamanho dos h2 seguintes).
  */
 import { Heart } from "lucide-react";
 import logoMaternologia from "@/assets/logo-maternologia.svg";
@@ -32,7 +36,7 @@ export const HeroSection = () => {
       <div className="hidden md:block absolute bottom-40 right-10 w-48 h-48 bg-lavender-light rounded-full blur-3xl opacity-50" />
       <div className="hidden md:block absolute top-1/2 left-1/3 w-24 h-24 bg-peach-light rounded-full blur-2xl opacity-40" />
 
-      <div className="container relative z-10 px-4 pt-2 pb-10 md:pt-4 md:pb-14">
+      <div className="container relative z-10 px-6 sm:px-8 lg:px-12 pt-2 pb-10 md:pt-4 md:pb-14">
         <div className="flex items-center justify-center gap-2 mb-8">
           <img
             src={logoMaternologia}
@@ -40,11 +44,11 @@ export const HeroSection = () => {
             width="120"
             height="48"
             decoding="async"
-            className="h-7 w-auto"
+            className="h-12 md:h-14 w-auto"
           />
         </div>
 
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center max-w-5xl mx-auto">
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm mb-6">
               <Heart className="w-4 h-4 text-primary shrink-0" />
@@ -53,7 +57,7 @@ export const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="font-sans text-3xl md:text-4xl lg:text-[42px] font-extrabold text-foreground leading-[1.15] mb-5 tracking-tight">
+            <h1 className="font-sans text-4xl md:text-5xl font-extrabold text-foreground leading-[1.15] mb-5 tracking-tight">
               Uma lista de 50 coisas pra resolver antes do bebê nascer.
               <br />
               Por onde você <span className="text-[hsl(18_70%_48%)]">começa?</span>

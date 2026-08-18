@@ -88,7 +88,7 @@ export const ComparisonSection = () => {
           </div>
 
           <div className="text-center mt-10">
-            <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+            <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
           </div>
         </div>
       </div>

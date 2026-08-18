@@ -11,7 +11,11 @@
  * @solution Nova seção, extraída do HeroSection.tsx real (mesma técnica visual: lista
  *           corrida com Check grosso na cor de destaque, "leia com atenção..." em
  *           marca-texto inline). Sem componente HowItWorks/Benefits equivalente no site
- *           original — é conteúdo novo de posição, não novo visualmente.
+ *           original — é conteúdo novo de posição, não novo visualmente. Testado ao vivo
+ *           pela Luiza: sem padding-top nenhum (só pb-*, como no protótipo), a seção
+ *           colava direto no Hero sem respiro — adicionado pt-12 md:pt-16. Título também
+ *           padronizado pra text-3xl md:text-4xl, igual ao resto dos h2 da página (estava
+ *           num tamanho um pouco menor, só nesta seção).
  */
 import { Check } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -47,10 +51,10 @@ const discoveries = [
 
 export const DiscoverSection = () => {
   return (
-    <section className="pb-16 md:pb-24 bg-background">
+    <section className="pt-12 pb-16 md:pt-16 md:pb-24 bg-background">
       <div className="container px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-sans text-2xl md:text-[32px] font-bold text-foreground mb-5">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground mb-5">
             A partir de agora você não ficará mais perdida ao se preparar para a sua
             maternidade.
           </h2>
@@ -82,7 +86,7 @@ export const DiscoverSection = () => {
           </div>
 
           <div className="mt-10 flex justify-center lg:justify-start">
-            <CTAButton>Quero Viver Meus 100 Dias Sem Caos →</CTAButton>
+            <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ export const FinalCTASection = () => {
           {/* Final CTA */}
           <div className="space-y-4">
             <CTAButton className="text-xl px-10 py-5">
-              Quero Viver Meus 100 Dias Sem Caos{" →"}
+              Quero Viver Meus 100 Dias Sem Caos{" →"}
             </CTAButton>
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
               <Sparkles className="w-4 h-4" />

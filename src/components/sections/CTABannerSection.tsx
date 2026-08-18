@@ -17,7 +17,7 @@ export const CTABannerSection = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto text-center">
           <CTAButton className="text-lg md:text-xl">
-            Quero Viver Meus 100 Dias Sem Caos{" →"}
+            Quero Viver Meus 100 Dias Sem Caos{" →"}
           </CTAButton>
         </div>
       </div>

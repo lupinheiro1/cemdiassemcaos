@@ -11,7 +11,10 @@
  *            bônus (com ícone de presente); adicionada a informação de acesso por 1 ano.
  * @solution Itens/preço/nota reescritos conforme a copy aprovada (seção 10 do .md acima).
  *           font-serif → font-sans nos títulos. Selos e garantia mantidos como já estavam
- *           (sem mudança documentada no changelog).
+ *           (sem mudança documentada no changelog). Testado ao vivo pela Luiza: título
+ *           estava em text-2xl no mobile (menor que o padrão text-3xl do resto da página,
+ *           pra caber o texto mais longo) — padronizado de volta, a quebra de linha extra
+ *           no mobile é preferível à inconsistência de tamanho entre seções.
  */
 import { CheckCircle2, Package, Briefcase, MessageCircle, BookOpen, Gift, Shield, Zap, Headphones } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -56,7 +59,7 @@ export const OfferSection = () => {
     <section className="py-16 md:py-24 bg-gradient-to-b from-rose-light to-background">
       <div className="container px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-sans text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Ao adquirir o 100 Dias Sem Caos, você recebe o app completo:
           </h2>
 
@@ -98,7 +101,7 @@ export const OfferSection = () => {
                 gravidez.
               </p>
 
-              <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+              <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
             </div>
           </div>
 
