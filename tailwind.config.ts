@@ -68,7 +68,6 @@ export default {
         "warm-brown": "hsl(var(--warm-brown))",
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
