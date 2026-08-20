@@ -84,6 +84,24 @@ imediatamente anterior a `OfferSection`, e os CTAs pós-Oferta
 (`ComparisonSection`, `FinalCTASection`, `OfferSection`) seguem sem a prop
 `href`, indo direto pro checkout como antes.
 
+## Publicação (20/08/2026)
+
+`scripts/build-prerender-prod.mjs` e `scripts/deploy.mjs` tinham um guard herdado
+que exigia `>=7` CTAs apontando pro checkout da Hotmart (premissa válida quando os
+7 CTAs da página iam todos direto pro Hotmart) — quebrou o `npm run build` porque
+agora só 3 continuam indo direto (Oferta/Comparação/CTA final). Ajustado nos dois
+scripts pra `>=3` CTAs de checkout, com um guard novo garantindo `>=4` CTAs de
+âncora pro `#antes-da-oferta` e a presença do próprio `id="antes-da-oferta"` no
+HTML renderizado — assim o guard volta a proteger contra regressão real (CTA
+quebrado) sem barrar esse redesign intencional.
+
+Deploy publicado com `npm run deploy`: build validado (H1, GTM, 3 CTAs checkout,
+sem noindex, base de produção), `obrigado/` intacta antes e depois, bundle servido
+como `text/javascript`. No ar em <https://maternologia.com.br/100-dias-sem-caos/>.
+
+Commits: `b423236` (redirect dos 4 CTAs), `cb34bcb` (guard do build) e `c546155`
+(guard do deploy).
+
 ## Em aberto
 
 - **Tag nova no GTM pendente.** O evento `cta_pre_oferta_click` já dispara no
