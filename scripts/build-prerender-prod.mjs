@@ -1,16 +1,21 @@
 /**
  * @file build-prerender-prod.mjs
- * @modified 2026-07-24
- * @authors Marcelo Arana + Luiza Pinheiro + Claude Opus 4.8
+ * @modified 2026-08-20
+ * @authors Marcelo Arana + Luiza Pinheiro + Claude Sonnet 5
  * @reason O build-prerender.mjs (Luiza) é fixo na base de PREVIEW
  *         (/100-dias-sem-caos-prerender/) e o plugin do vite.config injeta
  *         `noindex` em todo build com mode="prerender". Publicar isso em produção
- *         quebraria os assets E tiraria a landing do Google.
+ *         quebraria os assets E tiraria a landing do Google. Depois: dos 7 CTAs da
+ *         página, os 4 antes da Oferta passaram a rolar até `#antes-da-oferta` em
+ *         vez de abrir o checkout direto (ver docs/20260820-redirecionamento-ctas-pre-oferta.md)
+ *         — o guard antigo (`>=7 CTAs pro Hotmart`) barrava esse build de propósito.
  * @objective Gerar o MESMO artefato pré-renderizado, porém publicável em
  *            /100-dias-sem-caos/.
  * @solution Reusa o pipeline dela (build cliente + build SSR pelo Vite, mesmas URLs
  *           de asset), sobrescrevendo `base` e `outDir`, removendo o meta noindex e
- *           injetando o bootstrap de UTM. Aborta se qualquer garantia falhar.
+ *           injetando o bootstrap de UTM. Aborta se qualquer garantia falhar. Depois:
+ *           guard de CTAs de checkout ajustado pra 3 (Oferta/Comparação/CTA final) e
+ *           novo guard garantindo os 4 CTAs de âncora pro `#antes-da-oferta`.
  */
 import { build } from "vite";
 import { mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -85,11 +90,16 @@ if (!outputHtml.includes("GTM-5MLMK2BS")) throw new Error("[prod] Snippet do GTM
 if (!outputHtml.includes("utm-bootstrap")) throw new Error("[prod] Bootstrap de UTM não foi injetado.");
 
 const ctas = (outputHtml.match(/href="https:\/\/pay\.hotmart\.com/g) || []).length;
-if (ctas < 7) throw new Error(`[prod] Esperados >=7 CTAs, encontrados ${ctas}.`);
+if (ctas < 3) throw new Error(`[prod] Esperados >=3 CTAs pro checkout, encontrados ${ctas}.`);
+
+const preOfertaCtas = (outputHtml.match(/href="#antes-da-oferta"/g) || []).length;
+if (preOfertaCtas < 4) throw new Error(`[prod] Esperados >=4 CTAs pro #antes-da-oferta, encontrados ${preOfertaCtas}.`);
+if (!outputHtml.includes('id="antes-da-oferta"')) throw new Error("[prod] Âncora #antes-da-oferta ausente no HTML.");
 
 writeFileSync(htmlPath, outputHtml, "utf8");
 
 console.log(
-  `[prod] OK — base ${PROD_BASE} · sem noindex · GTM presente · ${ctas} CTAs · ` +
-    `UTM bootstrap ativo · ${(statSync(htmlPath).size / 1024).toFixed(1)} KB em dist-prerender-prod/`
+  `[prod] OK — base ${PROD_BASE} · sem noindex · GTM presente · ${ctas} CTAs pro checkout · ` +
+    `${preOfertaCtas} CTAs pro #antes-da-oferta · UTM bootstrap ativo · ` +
+    `${(statSync(htmlPath).size / 1024).toFixed(1)} KB em dist-prerender-prod/`
 );
