@@ -1,16 +1,19 @@
 /**
  * @file deploy.mjs
- * @modified 2026-07-24
- * @authors Marcelo Arana + Claude Opus 4.8
+ * @modified 2026-08-20
+ * @authors Marcelo Arana + Claude Sonnet 5
  * @reason O deploy era manual (dois scp com caminhos longos) e exigia lembrar de
  *         NÃO substituir a pasta inteira — `public_html/100-dias-sem-caos/obrigado/`
  *         é a página de conversão, tem deploy próprio e não sai do build. Um
- *         `scp -r` distraído a apagaria.
+ *         `scp -r` distraído a apagaria. Depois: 4 dos 7 CTAs passaram a apontar pra
+ *         `#antes-da-oferta` em vez do checkout (ver
+ *         docs/20260820-redirecionamento-ctas-pre-oferta.md), tornando o guard antigo
+ *         de `>=7 CTAs pro Hotmart` incorreto por design.
  * @objective `npm run deploy` publica a produção sem que ninguém precise lembrar
  *            de regra nenhuma.
  * @solution Envia apenas index.html + assets/ (nunca a pasta), confere obrigado/
  *           antes e depois, e valida o site no ar ao final. Aborta em qualquer
- *           divergência.
+ *           divergência. Depois: guard de CTAs de checkout ajustado pra >=3.
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
@@ -39,9 +42,9 @@ if (/noindex/i.test(html)) die("Build com noindex — tiraria o site do Google."
 if (!html.includes("GTM-5MLMK2BS")) die("Build sem o GTM.");
 if (html.includes("100-dias-sem-caos-prerender")) die("Build aponta para a pasta de PREVIEW, não produção.");
 const ctas = (html.match(/href="https:\/\/pay\.hotmart\.com/g) || []).length;
-if (ctas < 7) die(`Build com ${ctas} CTAs (esperado >= 7).`);
+if (ctas < 3) die(`Build com ${ctas} CTAs pro checkout (esperado >= 3).`);
 
-console.log(`✓ build validado — H1, GTM, ${ctas} CTAs, sem noindex, base de produção`);
+console.log(`✓ build validado — H1, GTM, ${ctas} CTAs pro checkout, sem noindex, base de produção`);
 
 // --- 2. a página de conversão existe hoje? ---
 const obrigadoAntes = ssh(`test -f ${REMOTE}/obrigado/index.html && echo ok || echo faltou`);
