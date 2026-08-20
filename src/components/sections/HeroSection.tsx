@@ -1,11 +1,13 @@
 /**
  * @file HeroSection.tsx
- * @modified 2026-08-17
+ * @modified 2026-08-20
  * @authors Luiza Machado + Claude Sonnet 5
  * @reason Reforma da página de vendas (protótipo aprovado em design/, 15 rodadas de
  *         ajuste): a oferta virou um app, não mais um e-book/guia em PDF. O hero antigo
  *         prometia "um guia" e trazia os 6 itens de "você vai descobrir" competindo por
- *         espaço com a promessa do produto na mesma dobra.
+ *         espaço com a promessa do produto na mesma dobra. Depois: GA4/Meta Ads mostraram
+ *         gente abrindo o checkout da Hotmart direto por esse CTA, sem ver a Oferta/preço
+ *         no site (scroll_25 bem menor que begin_checkout).
  * @objective Hero focado numa coisa só: validar a dor (a lista de 50 tarefas) e prometer
  *            a solução (um app com passo a passo), com uma screenshot real do app pra dar
  *            prova visual imediata. Os 6 itens de "você vai descobrir" saíram pra uma
@@ -21,7 +23,9 @@
  *           lateral reforçado e max-width do grid reduzido de 6xl pra 5xl (conteúdo colado
  *           na borda em telas largas). H1 padronizado pra text-4xl md:text-5xl — mesma
  *           escala usada nos h2 do resto da página, um degrau acima, pra manter hierarquia
- *           clara (estava quase do mesmo tamanho dos h2 seguintes).
+ *           clara (estava quase do mesmo tamanho dos h2 seguintes). Depois: CTAButton do
+ *           Hero passa a apontar pra "#antes-da-oferta" (ver TransformationSection.tsx) em
+ *           vez de abrir o checkout direto.
  */
 import { Heart } from "lucide-react";
 import logoMaternologia from "@/assets/logo-maternologia.svg";
@@ -76,7 +80,7 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-col items-center lg:items-start gap-2.5">
-              <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+              <CTAButton href="#antes-da-oferta" trackingLabel="hero">Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
               <span className="text-sm text-muted-foreground">
                 ✨ Acesso imediato, direto no seu celular
               </span>

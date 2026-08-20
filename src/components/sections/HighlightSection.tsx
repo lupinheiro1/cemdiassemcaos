@@ -1,6 +1,6 @@
 /**
  * @file HighlightSection.tsx
- * @modified 2026-08-17
+ * @modified 2026-08-20
  * @authors Luiza Machado + Claude Sonnet 5
  * @reason Reforma da página de vendas (protótipo aprovado em design/): erro de tempo
  *         verbal no card de destaque — "cuida... desse bebê que acabou de nascer" fala
@@ -20,6 +20,10 @@
  *           da nota): tentativa de reduzir pra text-sm ficou pequena demais — voltaram pra
  *           text-base (igual ao corpo normal do site). Só a nota "Por isso, organizamos..."
  *           deve ficar menor que o resto — mantida em text-xs, pedido explícito da Luiza.
+ *           Depois: GA4/Meta Ads mostraram gente abrindo o checkout da Hotmart direto por
+ *           esse CTA, sem ver a Oferta/preço no site — CTAButton passa a apontar pra
+ *           "#antes-da-oferta" (ver TransformationSection.tsx) em vez de abrir o checkout
+ *           direto.
  */
 import { Heart } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -64,7 +68,7 @@ export const HighlightSection = () => {
             </p>
           </div>
 
-          <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+          <CTAButton href="#antes-da-oferta" trackingLabel="destaque">Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
         </div>
       </div>
     </section>

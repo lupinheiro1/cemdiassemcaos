@@ -1,12 +1,20 @@
 /**
  * @file TransformationSection.tsx
- * @modified 2026-08-17
+ * @modified 2026-08-20
  * @authors Luiza Machado + Claude Sonnet 5
  * @reason Reforma da página de vendas (protótipo aprovado em design/): revisão de
  *         tipografia da página inteira — tirar a serifa (Playfair Display) dos títulos.
+ *         Depois: essa é a seção logo acima da Oferta (a próxima no Index.tsx) — os 4 CTAs
+ *         que ficam antes da Oferta (Hero, DiscoverSection, HighlightSection,
+ *         CTABannerSection) passaram a rolar a página até aqui em vez de abrir o checkout
+ *         direto, já que dados de GA4/Meta Ads indicaram gente abrindo o checkout sem ver a
+ *         Oferta/preço no site.
  * @objective Conteúdo desta seção sem alterações (ver
  *            design/100-dias-sem-caos-copy-pagina-vendas_4.md, seção 9); só a fonte muda.
- * @solution font-serif → font-sans no h2 e nos h3 de cada coluna.
+ *            Depois: dar um alvo de âncora estável pra esses 4 CTAs apontarem.
+ * @solution font-serif → font-sans no h2 e nos h3 de cada coluna. Depois: adicionado
+ *           `id="antes-da-oferta"` e `scroll-mt-6` na section (folga no topo ao rolar até
+ *           aqui via âncora, pra o título não colar na borda da tela).
  */
 import { X, Check } from "lucide-react";
 
@@ -39,7 +47,7 @@ const transformations = [
 
 export const TransformationSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="antes-da-oferta" className="py-16 md:py-24 bg-background scroll-mt-6">
       <div className="container px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-foreground text-center mb-12">

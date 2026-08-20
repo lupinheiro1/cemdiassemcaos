@@ -1,10 +1,11 @@
 /**
  * @file DiscoverSection.tsx
- * @modified 2026-08-17
+ * @modified 2026-08-20
  * @authors Luiza Machado + Claude Sonnet 5
  * @reason Reforma da página de vendas (protótipo aprovado em design/): os 6 itens de
  *         "você vai descobrir" viviam dentro do Hero, competindo por espaço com a
- *         promessa do app na mesma dobra.
+ *         promessa do app na mesma dobra. Depois: GA4/Meta Ads mostraram gente abrindo o
+ *         checkout da Hotmart direto por esse CTA, sem ver a Oferta/preço no site.
  * @objective Segunda dobra dedicada só a esses itens (agora 5, um foi cortado por
  *            redundância com o Hero — ver design/100-dias-sem-caos-copy-pagina-vendas_4.md,
  *            item 65), sem disputar atenção com o resto do Hero.
@@ -15,7 +16,9 @@
  *           pela Luiza: sem padding-top nenhum (só pb-*, como no protótipo), a seção
  *           colava direto no Hero sem respiro — adicionado pt-12 md:pt-16. Título também
  *           padronizado pra text-3xl md:text-4xl, igual ao resto dos h2 da página (estava
- *           num tamanho um pouco menor, só nesta seção).
+ *           num tamanho um pouco menor, só nesta seção). Depois: CTAButton passa a apontar
+ *           pra "#antes-da-oferta" (ver TransformationSection.tsx) em vez de abrir o
+ *           checkout direto.
  */
 import { Check } from "lucide-react";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -86,7 +89,7 @@ export const DiscoverSection = () => {
           </div>
 
           <div className="mt-10 flex justify-center lg:justify-start">
-            <CTAButton>Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
+            <CTAButton href="#antes-da-oferta" trackingLabel="descubra">Quero Viver Meus 100 Dias Sem Caos{" →"}</CTAButton>
           </div>
         </div>
       </div>
