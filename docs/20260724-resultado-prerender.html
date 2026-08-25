@@ -1,0 +1,476 @@
+<title>100 Dias Sem Caos — resultado do prerender</title>
+<div class="diario-hat" style="text-align:center;padding:8px 12px 0;font-size:12.5px;letter-spacing:.02em;opacity:.72"><a href="https://claude.ai/code/artifact/25d4d518-cab3-4660-b556-c8e845fbbacf" style="color:inherit;text-underline-offset:3px">🗓️ Diário de bordo LFCM</a></div>
+<style>
+  :root {
+    --areia: #F7F3EC;
+    --areia-2: #EFE9DE;
+    --tinta: #2A2520;
+    --tinta-suave: #6B6259;
+    --pedra: #8C8378;
+    --linha: #DFD6C7;
+    --salva: #4A7C59;
+    --salva-clara: #E4EFE6;
+    --ambar: #B67B3C;
+    --ambar-clara: #F6EADB;
+    --papel: #FFFDF8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --areia: #1B1917;
+      --areia-2: #232019;
+      --tinta: #EDE7DC;
+      --tinta-suave: #A9A096;
+      --pedra: #8A8177;
+      --linha: #38332C;
+      --salva: #7FB68C;
+      --salva-clara: #212E24;
+      --ambar: #D9A263;
+      --ambar-clara: #2E2519;
+      --papel: #221F1A;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --areia: #1B1917;
+    --areia-2: #232019;
+    --tinta: #EDE7DC;
+    --tinta-suave: #A9A096;
+    --pedra: #8A8177;
+    --linha: #38332C;
+    --salva: #7FB68C;
+    --salva-clara: #212E24;
+    --ambar: #D9A263;
+    --ambar-clara: #2E2519;
+    --papel: #221F1A;
+  }
+
+  :root[data-theme="light"] {
+    --areia: #F7F3EC;
+    --areia-2: #EFE9DE;
+    --tinta: #2A2520;
+    --tinta-suave: #6B6259;
+    --pedra: #8C8378;
+    --linha: #DFD6C7;
+    --salva: #4A7C59;
+    --salva-clara: #E4EFE6;
+    --ambar: #B67B3C;
+    --ambar-clara: #F6EADB;
+    --papel: #FFFDF8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--areia);
+    color: var(--tinta);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 5rem;
+  }
+
+  .eyebrow {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pedra);
+    margin: 0 0 1.1rem;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 5.2vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+    font-weight: 600;
+  }
+
+  .dek {
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    color: var(--tinta-suave);
+    max-width: 40rem;
+    margin: 0 0 3rem;
+  }
+
+  /* — herói: o número que importa — */
+  .heroi {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-radius: 3px;
+    padding: clamp(1.5rem, 4vw, 2.6rem);
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(1.2rem, 4vw, 2.8rem);
+  }
+
+  .antes-depois {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .valor-antes {
+    font-size: clamp(2.1rem, 6vw, 3.1rem);
+    color: var(--pedra);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-weight: 500;
+  }
+
+  .seta { color: var(--pedra); font-size: 1.5rem; }
+
+  .valor-depois {
+    font-size: clamp(3.2rem, 10vw, 5.2rem);
+    color: var(--salva);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  .heroi-texto { flex: 1 1 15rem; min-width: 0; }
+
+  .heroi-rotulo {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--pedra);
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+
+  .heroi-frase { margin: 0; font-size: 1.02rem; color: var(--tinta-suave); }
+  .heroi-frase strong { color: var(--tinta); font-weight: 600; }
+
+  h2 {
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+    margin: 0 0 0.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.88rem;
+    color: var(--pedra);
+    margin: 0 0 1.3rem;
+  }
+
+  section { margin-bottom: 3.4rem; }
+
+  .rolagem { overflow-x: auto; border: 1px solid var(--linha); border-radius: 3px; background: var(--papel); }
+
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+
+  th, td {
+    padding: 0.82rem 1rem;
+    text-align: right;
+    border-bottom: 1px solid var(--linha);
+    font-variant-numeric: tabular-nums;
+  }
+
+  th {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--pedra);
+    font-weight: 600;
+    background: var(--areia-2);
+  }
+
+  th:first-child, td:first-child { text-align: left; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .metrica { font-weight: 600; }
+  .metrica small {
+    display: block;
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--pedra);
+    letter-spacing: 0;
+    margin-top: 0.1rem;
+  }
+
+  .antes { color: var(--pedra); }
+  .depois { font-weight: 600; }
+
+  .delta {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ganho { color: var(--salva); }
+  .custo { color: var(--ambar); }
+
+  tr.destaque td { background: var(--salva-clara); }
+  tr.destaque .depois { color: var(--salva); font-size: 1.1rem; }
+  tr.custo-linha td { background: var(--ambar-clara); }
+
+  /* — três medições — */
+  .medicoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1px;
+    background: var(--linha);
+    border: 1px solid var(--linha);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .medicao { background: var(--papel); padding: 1.3rem 1.2rem; }
+  .medicao.antiga { background: var(--areia-2); }
+
+  .hora {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pedra);
+    font-weight: 600;
+    margin: 0 0 0.7rem;
+  }
+
+  .nota-score {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.9rem;
+  }
+  .nota-score.ruim { color: var(--pedra); }
+  .nota-score.boa { color: var(--salva); }
+
+  .mini {
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.22rem 0;
+    color: var(--tinta-suave);
+    font-variant-numeric: tabular-nums;
+  }
+  .mini b { color: var(--tinta); font-weight: 600; }
+  .mini.culpado b { color: var(--ambar); }
+
+  /* — explicação — */
+  .caixa {
+    background: var(--papel);
+    border: 1px solid var(--linha);
+    border-left: 3px solid var(--ambar);
+    border-radius: 3px;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+  }
+  .caixa p { margin: 0 0 0.85rem; }
+  .caixa p:last-child { margin-bottom: 0; }
+  .caixa strong { font-weight: 600; }
+
+  .rodape {
+    border-top: 1px solid var(--linha);
+    padding-top: 1.4rem;
+    font-family: ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: var(--pedra);
+  }
+  .rodape p { margin: 0 0 0.5rem; }
+  .rodape strong { color: var(--tinta-suave); font-weight: 600; }
+
+  .credito {
+    margin-top: 2.6rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--salva-clara);
+    border-radius: 3px;
+    font-size: 1rem;
+  }
+  .credito p { margin: 0; }
+  .credito strong { font-weight: 600; }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">100 Dias Sem Caos &middot; 24 de julho de 2026</p>
+  <h1>A landing agora aparece na metade do tempo</h1>
+  <p class="dek">
+    O texto principal passou a vir pronto no HTML, em vez de esperar 236&nbsp;KB de JavaScript
+    carregar. Medido pelo PageSpeed do Google, em celular e 4G lenta.
+  </p>
+
+  <div class="heroi">
+    <div class="antes-depois">
+      <span class="valor-antes">4,6s</span>
+      <span class="seta">&rarr;</span>
+      <span class="valor-depois">2,1s</span>
+    </div>
+    <div class="heroi-texto">
+      <p class="heroi-rotulo">Tempo até a promessa aparecer</p>
+      <p class="heroi-frase">
+        Quem clica no anúncio via <strong>4,6 segundos de tela em branco</strong>.
+        Muita gente desistia antes de ler qualquer coisa.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <h2>Todas as métricas</h2>
+    <p class="sub">Antes: 23h28. Depois: última medição, 00h18.</p>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Métrica</th>
+            <th scope="col">Antes</th>
+            <th scope="col">Depois</th>
+            <th scope="col">Variação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="destaque">
+            <td class="metrica">LCP<small>texto principal aparece</small></td>
+            <td class="antes">4,6 s</td>
+            <td class="depois">2,1 s</td>
+            <td class="delta ganho">−2,5 s &nbsp;·&nbsp; −54%</td>
+          </tr>
+          <tr>
+            <td class="metrica">FCP<small>primeiro pixel na tela</small></td>
+            <td class="antes">2,6 s</td>
+            <td class="depois">2,0 s</td>
+            <td class="delta ganho">−0,6 s</td>
+          </tr>
+          <tr>
+            <td class="metrica">Speed Index<small>velocidade percebida</small></td>
+            <td class="antes">2,6 s</td>
+            <td class="depois">2,0 s</td>
+            <td class="delta ganho">−0,6 s</td>
+          </tr>
+          <tr>
+            <td class="metrica">Desempenho<small>nota geral</small></td>
+            <td class="antes">77</td>
+            <td class="depois">88</td>
+            <td class="delta ganho">+11</td>
+          </tr>
+          <tr>
+            <td class="metrica">SEO<small>indexação no Google</small></td>
+            <td class="antes">100</td>
+            <td class="depois">100</td>
+            <td class="delta">mantido</td>
+          </tr>
+          <tr>
+            <td class="metrica">Acessibilidade</td>
+            <td class="antes">95</td>
+            <td class="depois">95</td>
+            <td class="delta">mantido</td>
+          </tr>
+          <tr class="custo-linha">
+            <td class="metrica">CLS<small>a página “pula” ao carregar</small></td>
+            <td class="antes">0,004</td>
+            <td class="depois">0,104</td>
+            <td class="delta custo">custo aceito</td>
+          </tr>
+          <tr>
+            <td class="metrica">TBT<small>celular ocupado processando</small></td>
+            <td class="antes">200 ms</td>
+            <td class="depois">310 ms</td>
+            <td class="delta custo">instável &mdash; ver abaixo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por que a última nota deu 88 e não 92?</h2>
+    <p class="sub">Três medições da mesma página, sem nenhuma mudança no código entre elas.</p>
+
+    <div class="medicoes">
+      <div class="medicao antiga">
+        <p class="hora">23h28 &middot; antes</p>
+        <div class="nota-score ruim">77</div>
+        <div class="mini"><span>LCP</span><b>4,6s</b></div>
+        <div class="mini"><span>FCP</span><b>2,6s</b></div>
+        <div class="mini"><span>CLS</span><b>0,004</b></div>
+        <div class="mini"><span>TBT</span><b>200ms</b></div>
+      </div>
+      <div class="medicao">
+        <p class="hora">23h52 &middot; depois</p>
+        <div class="nota-score boa">92</div>
+        <div class="mini"><span>LCP</span><b>2,3s</b></div>
+        <div class="mini"><span>FCP</span><b>2,1s</b></div>
+        <div class="mini"><span>CLS</span><b>0,112</b></div>
+        <div class="mini culpado"><span>TBT</span><b>110ms</b></div>
+      </div>
+      <div class="medicao">
+        <p class="hora">00h18 &middot; depois</p>
+        <div class="nota-score boa">88</div>
+        <div class="mini"><span>LCP</span><b>2,1s</b></div>
+        <div class="mini"><span>FCP</span><b>2,0s</b></div>
+        <div class="mini"><span>CLS</span><b>0,104</b></div>
+        <div class="mini culpado"><span>TBT</span><b>310ms</b></div>
+      </div>
+    </div>
+
+    <div class="caixa" style="margin-top: 1.4rem;">
+      <p>
+        Entre 23h52 e 00h18, <strong>quatro das cinco métricas melhoraram</strong> — LCP, FCP,
+        Speed Index e CLS. Só o TBT subiu, de 110&nbsp;ms para 310&nbsp;ms.
+      </p>
+      <p>
+        Acontece que o <strong>TBT sozinho vale 30% da nota</strong>, o maior peso de todos. Ele
+        piorou o bastante para derrubar 4 pontos apesar de todo o resto ter melhorado.
+      </p>
+      <p>
+        E o TBT é a métrica <strong>mais instável</strong> do PageSpeed: mede quanto o processador
+        ficou ocupado, o que depende de quanta máquina o Google tinha livre naquele instante — e
+        conta os scripts de terceiros (GTM, Pixel, Analytics), que variam a cada carregamento.
+      </p>
+      <p>
+        <strong>Não mudamos nada no site entre os dois testes.</strong> 88 e 92 são a mesma página:
+        a diferença é ruído de medição. O que se manteve firme nas duas foi o LCP, em ~2,1&ndash;2,3&nbsp;s.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sobre o CLS</h2>
+    <div class="caixa">
+      <p>
+        É o único número que piorou de verdade, e foi uma <strong>troca consciente</strong>. O texto
+        agora pinta cedo, com a fonte do sistema; quando as fontes da marca chegam, o texto se
+        reposiciona um pouco.
+      </p>
+      <p>
+        Antes isso não acontecia porque <em>nada</em> aparecia até tudo carregar — a página não
+        pulava, mas ficava 4,6&nbsp;segundos em branco. Trocar isso por um leve reposicionamento em
+        troca de 2,5&nbsp;segundos foi a decisão certa. Fica na lista para melhorar depois.
+      </p>
+    </div>
+  </section>
+
+  <div class="credito">
+    <p>
+      <strong>A arquitetura em produção é a da Luiza</strong> — o pipeline de build com render de
+      servidor pelo Vite, que garante que cliente e servidor usem exatamente os mesmos arquivos.
+      As alternativas testadas ficaram para trás por piorarem justamente o LCP.
+    </p>
+  </div>
+
+  <div class="rodape" style="margin-top: 2.6rem;">
+    <p><strong>Como foi medido:</strong> PageSpeed Insights oficial, Moto G Power emulado, 4G lenta, Lighthouse 13.4.0.</p>
+    <p><strong>Ainda em aberto:</strong> o número que realmente importa é o LPV no Meta — em 2 a 3 dias dá para saber se a metade de segundo virou gente a mais chegando na página.</p>
+  </div>
+</div>
